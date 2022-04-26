@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    background-color: #1F1F1F;
+    color: whitesmoke;
+}
+
 body{
     margin: 0;
 }

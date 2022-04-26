@@ -1,0 +1,16 @@
+.form_button:hover {
+    background-color: rgb(168, 167, 167);   
+    border-color: rgb(168, 167, 167);
+}
+/* LoginPage */
+
+.form_loginpage {
+    background-color: #2E2E2E;
+}    
+
+
+/* RegisterPage */
+
+.form_registerpage {
+    background-color: #2E2E2E;
+}
