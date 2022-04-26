@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './pages.css'
+import { useDispatch } from 'react-redux';
+import './pages.css';
+import { LogIn } from '../redux/actions/auth';
 
 const LoginPage = () => {
 
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(LogIn());
   };
 
   return (
