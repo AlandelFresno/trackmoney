@@ -26,11 +26,11 @@ const RegisterPage = () => {
           <label className='pb-2 text-lg'> Email </label>
           <input className='rounded-lg pr-2 text-base pl-1'/>
         </div>
-        <div className='flex flex-col pt-2 pb-1'>
+        <div className='flex flex-col pb-4'>
           <label className='pb-2 text-lg'> Password </label>
           <input className='rounded-lg pr-2 text-base pl-1'/>
         </div>
-        <div className='flex flex-col pt-2 pb-1'>
+        <div className='flex flex-col pb-4'>
           <label className='pb-2 text-lg'> Confirm Password </label>
           <input className='rounded-lg pr-2 text-base pl-1'/>
         </div>
