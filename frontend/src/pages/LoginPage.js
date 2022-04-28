@@ -18,7 +18,7 @@ const LoginPage = () => {
       <div className='flex h-screen justify-center items-center '>
         <form 
           className=' flex flex-col items-center p-32 
-                      border-2 border-white border-opacity-100 border-solid 
+                      border-2 login_border_color border-opacity-100 border-solid 
                       rounded-xl form_loginpage'
           onSubmit={handleSubmit}
         >

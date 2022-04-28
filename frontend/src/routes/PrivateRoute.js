@@ -5,8 +5,8 @@ import HomePage from '../pages/HomePage';
 const PrivateRoute = () => {
   return (
     <Routes>
-      <Route exact path='/' element={<HomePage />} />
-      <Route exact path='*' element={<Navigate to='/' />} />
+      <Route path='/home' element={<HomePage />} />
+      <Route exact path='*' element={<Navigate to='/home' />} />
     </Routes>
   );
 };

@@ -1,13 +1,19 @@
 .form_button:hover {
-    background-color: rgb(168, 167, 167);   
-    border-color: rgb(168, 167, 167);
+    background-color: #A31621;   
+    border-color: #A31621;
+    color: whitesmoke;
 }
 /* LoginPage */
+.background_login {
 
+}
 .form_loginpage {
     background-color: #2E2E2E;
+    /* background-color: #470208; */
 }    
-
+.login_border_color {
+    border-color: #A31621;
+}
 
 /* RegisterPage */
 

@@ -7,7 +7,7 @@ import './pages.css';
 const HomePage = () => {
 
   const dispatch = useDispatch();
-  const total = 11111;
+  const total = 1234321;
 
 
   
@@ -17,11 +17,11 @@ const HomePage = () => {
 
   return (
     <div className=' w-screen h-screen text-white'>
-      
       <div className='flex flex-col items-center'>
         <div className=''>
-          <h4 className=' text-5xl 
-                          border-white border-solid rounded-xl'
+          <h4 className=' text-5xl w-96 h-16 flex 
+                          justify-center items-center 
+                          border border-white border-solid rounded-xl'
           > $ {total} </h4>
         </div>
           <button 
@@ -29,7 +29,7 @@ const HomePage = () => {
           > 
             <Link to='/newoperation' className='no-underline text-black'> New operation </Link>
           </button>
-        <button onClick={handleClick}> logout </button>
+        <button className='mt-4' onClick={handleClick}> logout </button>
       </div>
     </div>
   );
