@@ -1,14 +1,27 @@
 .form_button:hover {
-    background-color: #A31621;   
-    border-color: #A31621;
+    background-color: #11BBBB;   
+    border-color: #11BBBB;
     color: whitesmoke;
 }
-/* LoginPage */
-.background_login {
-
+.link_publicpage {
+    color: #11BBBB;
 }
+.input_publicpage:focus-visible {
+    outline: 4px solid #11BBBB;
+}
+/* LoginPage */
+
+.bg_loginpage {
+    /* background: rgb(18,116,117);
+    background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(17,187,187,1) 100%); */
+    background: rgb(18,116,117);
+    background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(0,158,158,1) 100%);
+}
+
 .form_loginpage {
-    background-color: #2E2E2E;
+    background-color: #2e2e2e83;
+    /* background-color: #034447; */
+    /* border: 2px solid #11BBBB; */
     /* background-color: #470208; */
 }    
 .login_border_color {
@@ -19,4 +32,5 @@
 
 .form_registerpage {
     background-color: #2E2E2E;
+    border: 2px solid #11BBBB;
 }

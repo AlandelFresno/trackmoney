@@ -15,26 +15,24 @@ const LoginPage = () => {
 
   return (
     <div className='w-screen'>
-      <div className='flex h-screen justify-center items-center '>
+      <div className='flex h-screen justify-center items-center bg_loginpage'>
         <form 
-          className=' flex flex-col items-center p-32 
-                      border-2 login_border_color border-opacity-100 border-solid 
-                      rounded-xl form_loginpage'
+          className=' flex flex-col items-center p-32  rounded-xl form_loginpage'
           onSubmit={handleSubmit}
         >
         <div className='flex flex-col pb-4'>
-          <label className='pb-2 text-lg'> Username </label>
-          <input className='rounded-lg pr-2 text-base pl-1'/>
+          <label className='pb-2 text-xl'> Username </label>
+          <input className='rounded-lg pr-2 text-base pl-1 input_publicpage'/>
         </div>
         <div className='flex flex-col pb-4'>
-          <label className='pb-2 text-lg'> Password </label>
-          <input className='rounded-lg pr-2 text-base pl-1'/>
+          <label className='pb-2 text-xl'> Password </label>
+          <input className='rounded-lg pr-2 text-base pl-1 input_publicpage'/>
         </div>
         <button
           className='page_button w-32 h-8 border-2 border-white rounded-lg mt-6 form_button'
           
         > Log In </button>
-        <Link to='/register' className='pt-8 text-blue-500'> Create Account </Link>
+        <Link to='/register' className='pt-8 link_publicpage'> Create Account </Link>
         </form>
       </div>
     </div>
