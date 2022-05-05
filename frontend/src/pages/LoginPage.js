@@ -29,7 +29,7 @@ const LoginPage = () => {
           <input className='rounded-lg pr-2 text-base pl-1 input_publicpage'/>
         </div>
         <button
-          className='page_button w-32 h-8 border-2 border-white rounded-lg mt-6 form_button'
+          className='w-32 h-8 border-2 border-white rounded-lg mt-6 form_button'
           
         > Log In </button>
         <Link to='/register' className='pt-8 link_publicpage'> Create Account </Link>
