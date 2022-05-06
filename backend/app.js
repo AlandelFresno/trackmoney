@@ -5,6 +5,8 @@ const cors = require('cors');
 
 const sequelize = require('./database/connection');
 const User = require('./models/userModel');
+const user = require('./routes/users');
+const operations = require('./routes/operations');
 // const & let
 const app = express();
 const port = process.env.PORT || 3001;
@@ -26,39 +28,11 @@ User.sequelize.sync().then((req) => {
 
 // Routes
 app.get('/', (req, res) => {
-    res.status(200).send('Hello world');
-});
-
-app.delete('/api/users/:id', (req, res) => {
-   User.destroy({
-       where: {
-           id : req.params.id
-       }
-   });
-   res.status(200).send('Deleted');
-});
-app.post('/api/users', (req, res) => {
-
-    User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        createdat: Date.now()
-    })
-    .then( () => {
-        res.status(200).send('User created');
-    })
-    .catch((err) => {
-        res.send(err.message);
+    res.status(200).json({
+        "/api/users": ""
     });
 });
-
-// app.get('/api/operation', (req, res) => {
-
-// });
-
-// app.get('/api/operation/:id', (req, res) => {
-//     res.send(req.params.id);
-// });
+app.use('/api', user);
+app.use('/api', operations);
 
 
