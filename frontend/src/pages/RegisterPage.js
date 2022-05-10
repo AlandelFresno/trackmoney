@@ -26,6 +26,7 @@ const RegisterPage = () => {
     let passwordErr = '';
     let confirmpasswordErr = '';
     const specialChars = "!`@#$ %^&*()+=[];,./{}|:<>? ~";
+    const usarnametaken = await isTaken(name);
 
     if ( !value.email.includes('.com')) {
       emailErr ='Write a valid email';
@@ -46,10 +47,9 @@ const RegisterPage = () => {
     if (value.password !== value.confirmpassword) {
       confirmpasswordErr = 'Passwords do not match';
     };
-    const usarnametaken = await isTaken(name);
     if (usarnametaken) {
       nameErr = 'Username already exists'
-    }
+    };
     // console.log( nameErr || emailErr || passwordErr || confirmpasswordErr )
 
     if ( nameErr || emailErr || passwordErr || confirmpasswordErr) {
