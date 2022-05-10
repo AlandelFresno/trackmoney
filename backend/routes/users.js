@@ -4,12 +4,12 @@ const router = express.Router();
 const User = require('../models/userModel');
 
 router.get('/users', async(req, res) =>{
-    if ( req.body.name !== undefined) {
+
+    if ( req.query.name !== undefined) {
         await User.findAll({
             where:{
-                name: req.body.name
-            },
-            limit:10
+                name: req.query.name
+            }
         }).then((users) => {
             res.json(users);
         }).catch((err) => {
