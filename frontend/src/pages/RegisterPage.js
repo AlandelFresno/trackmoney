@@ -19,7 +19,7 @@ const RegisterPage = () => {
 
   const [value, setValue] = useState(initialState);
 
-  const validate = () => {
+  const isValidated = async(name) => {
 
     let nameErr = '';
     let emailErr = '';
@@ -46,13 +46,18 @@ const RegisterPage = () => {
     if (value.password !== value.confirmpassword) {
       confirmpasswordErr = 'Passwords do not match';
     };
-
+    const usarnametaken = await isTaken(name);
+    if (usarnametaken) {
+      nameErr = 'Username already exists'
+    }
     // console.log( nameErr || emailErr || passwordErr || confirmpasswordErr )
 
     if ( nameErr || emailErr || passwordErr || confirmpasswordErr) {
       setValue ({...value, nameErr, emailErr, passwordErr, confirmpasswordErr});
+      console.log('There is an error')
       return false;
     };
+    console.log('No errors')
     return true;
   };
 
@@ -61,9 +66,21 @@ const RegisterPage = () => {
       setValue({...value, [e.target.name]: e.target.value});
   };
 
-  const handleSubmit = (e) => {
+  const isTaken = async(name) => {
+    const users = await axios.get('http://localhost:3001/api/users', {params: {name: name}}); 
+    if ( users.data.length !== 0 ) {
+      // console.log('is taken');
+      return true;
+    } else {
+      // console.log('is free');
+      return false;
+    };
+  };
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (validate()) {
+    const validforpost = await isValidated(value.name);
+    if (validforpost) {
       console.log(value);
       setValue({...value, emailErr: '', nameErr: '', passwordErr: '', confirmpasswordErr: ''})
       axios.post('http://localhost:3001/api/users', {
