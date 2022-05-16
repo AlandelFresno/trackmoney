@@ -20,16 +20,16 @@ const LoginPage = () => {
     let passwordErr = '';
     let validationErr = '';
     
-    if( userInput == ''){
+    if( userInput === ''){
       userNameErr = 'Username cannot be blank';
     };
 
-    if( passwordInput == '') {
+    if( passwordInput === '') {
       passwordErr = 'Password cannot be blank';
     };
 
-    if ( userNameErr == '' && passwordErr == '') {
-      if( data.length == 0 ){
+    if ( userNameErr === '' && passwordErr === '') {
+      if( data.length === 0 ){
         validationErr= 'Incorrect username or password';
       } else {
         const userName = data[0].name.toLowerCase();

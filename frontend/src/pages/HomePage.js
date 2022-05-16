@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { LogOut } from '../redux/actions/auth';
+
 import './pages.css';
+
+import Operations from '../components/Operations';
 
 const HomePage = () => {
 
-  const dispatch = useDispatch();
+
   const total = 1234321;
+  const amount = 1000;
+  const title = 'title';
+  // const operationType = 'Expense';
+  const operationType = 'Income';
 
-
-  
-  const handleClick = () => {
-    dispatch(LogOut());
-  };
 
   return (
     <div className=' w-screen h-screen text-white'>
@@ -24,12 +24,24 @@ const HomePage = () => {
                           border border-white border-solid rounded-xl'
           > $ {total} </h4>
         </div>
+          <div className='border border-white border-solid rounded-lg p-2'>
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+            <Operations amount={amount} title={title} operationType={operationType} />
+          </div>
           <button 
-            className='page_button w-32 h-8 border-2 border-white rounded-lg'
+            className='page_button w-32 h-8 border-2 border-white rounded-lg mt-4'
           > 
             <Link to='/newoperation' className='no-underline text-black'> New operation </Link>
           </button>
-        <button className='mt-4' onClick={handleClick}> logout </button>
+
       </div>
     </div>
   );
