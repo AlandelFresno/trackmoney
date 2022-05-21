@@ -24,6 +24,9 @@ const User = sequelize.define('users', {
     createdat: {
         type: Sequelize.DATE,
         allowNull: false
+    },
+    transactions: {
+        type: Sequelize.JSON,
     }
 }, {
     timestamps: false

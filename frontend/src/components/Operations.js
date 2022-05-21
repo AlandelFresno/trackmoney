@@ -6,13 +6,13 @@ const Operations = (params) => {
 
     const {amount, title, operationType} = params;
     
-    console.log(amount, title, operationType);
+    // console.log(amount, title, operationType);
 
 
 
   return (
     <div className='flex w-96 justify-between items-center border boder-solid rounded-md border-white'>
-        <h5> Title </h5>
+        <h5> {title}</h5>
         {
             operationType === 'Income' ? 
                 <p className='pl-20 text-green-700'> {amount} </p>  

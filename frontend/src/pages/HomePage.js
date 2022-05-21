@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './pages.css';
 
 import Operations from '../components/Operations';
+import axios from 'axios';
+
 
 const HomePage = () => {
 
@@ -13,6 +15,20 @@ const HomePage = () => {
   const title = 'title';
   // const operationType = 'Expense';
   const operationType = 'Income';
+
+  const handleClick = async() => {
+    // const operations = await axios.get('http://localhost:3001/api/operation', {
+    //   params: {
+    //     name: 'front'
+    //   }
+    // });
+    const operations = await axios.post('http://localhost:3001/api/operation', {
+      title: 'Salary',
+      operationType: 'Income',
+      amount: 2000,
+    });
+    console.log(operations);
+  };
 
 
   return (
@@ -41,7 +57,7 @@ const HomePage = () => {
           > 
             <Link to='/newoperation' className='no-underline text-black'> New operation </Link>
           </button>
-
+          <button onClick={handleClick}> Hello world </button>
       </div>
     </div>
   );
