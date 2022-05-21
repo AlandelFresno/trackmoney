@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import './pages.css';
@@ -18,6 +18,7 @@ const RegisterPage = () => {
   };
 
   const [value, setValue] = useState(initialState);
+  const navigate = useNavigate();
 
   const isValidated = async(name) => {
 
@@ -88,6 +89,7 @@ const RegisterPage = () => {
         email: value.email,
         password: value.password
       });
+      navigate('/login');
     };
   };
 
