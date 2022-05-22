@@ -1,10 +1,21 @@
 import React from 'react';
+import Operations from '../components/Operations';
 
 const OperationsPage = () => {
   return (
-    <div className='w-screen h-screen text-white'>
-        <div className='flex justify-center content-center'>
-            <h4>OPERATIONS</h4>
+    <div className='w-screen  text-white'>
+        <div className='flex  flex-col items-center'>
+            <h4 className='mt-8'>OPERATIONS</h4>
+            <div className='flex  h-screen justify-center content-center items-center flex-col'>
+              <div className='border border-solid rounded-xl operation_width  flex flex-col items-center'>
+                <Operations amount='1' title='operation' operationType='Income'/>
+                <Operations amount='1' title='operation' operationType='Income'/>
+                <Operations amount='1' title='operation' operationType='Income'/>
+                <Operations amount='1' title='operation' operationType='Income'/>
+                <Operations amount='1' title='operation' operationType='Income'/>
+                <Operations amount='1' title='operation' operationType='Income'/>
+              </div>
+            </div>
         </div>
     </div>
   );
