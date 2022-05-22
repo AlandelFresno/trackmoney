@@ -26,7 +26,7 @@ const User = sequelize.define('users', {
         allowNull: false
     },
     transactions: {
-        type: Sequelize.JSON,
+        type: Sequelize.TEXT,
     }
 }, {
     timestamps: false

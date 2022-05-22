@@ -22,11 +22,17 @@ const HomePage = () => {
     //     name: 'front'
     //   }
     // });
-    const operations = await axios.post('http://localhost:3001/api/operation', {
-      title: 'Salary',
-      operationType: 'Income',
-      amount: 2000,
-    });
+    // const operations = await axios.post('http://localhost:3001/api/operation', {
+    //   title: 'Salary',
+    //   operationType: 'Income',
+    //   amount: 2000,
+    // });
+    const operations = await axios.get('http://localhost:3001/api/users', {
+      params: {
+        name: ''
+      }
+    })
+
     console.log(operations);
   };
 

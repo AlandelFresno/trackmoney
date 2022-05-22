@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './pages.css';
-import { LogIn } from '../redux/actions/auth';
+import { LogIn, NameLogIn } from '../redux/actions/auth';
 import axios from 'axios';
 
 const LoginPage = () => {
@@ -57,8 +57,10 @@ const LoginPage = () => {
     const validation = await isValidate(userNameInput, passwordInput);
     if (validation) {
       setValid({...valid, userNameErr: '', passwordErr: '', validationErr: ''});
+      console.log('login', userNameInput);
+      dispatch(NameLogIn(userNameInput));
       dispatch(LogIn());
-    }
+    };
   };
 
   return (

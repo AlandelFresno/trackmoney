@@ -12,7 +12,7 @@ router.get('/operation', async(req, res) => {
         .catch((err) => {res.json})
 });
 
-router.post('/operation', (req, res) => {
+router.post('/operation', async(req, res) => {
     // console.log(req);
     User.update({
             transactions: [

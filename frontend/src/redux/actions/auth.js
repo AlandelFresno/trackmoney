@@ -12,6 +12,6 @@ export const LogOut = () => {
     localStorage.setItem('auth', false);
     return{
         type: types.authLogout,
-        token:false 
+        token: false 
     };
 };
