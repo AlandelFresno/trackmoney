@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import BurgerMenu from '../components/BurgerMenu';
 import OperationsPage from '../pages/OperationsPage';
+import AboutPage from '../pages/AboutPage';
 
 const PrivateRoute = () => {
   
@@ -13,6 +14,7 @@ const PrivateRoute = () => {
       <Routes>
         <Route path='/home' element={<HomePage />} />
         <Route path='/operations' element={<OperationsPage/>}/>
+        <Route path='/about' element={<AboutPage />}/>
         <Route exact path='*' element={<Navigate to='/home' />} />
       </Routes>
     </div>

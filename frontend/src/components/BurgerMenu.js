@@ -46,7 +46,8 @@ const BurgerMenu = () => {
         <div className={`top-0 right-0 fixed ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>    
           <div className='mt-16 mr-8 flex flex-col'>
             <Link to='/home' className='no-underline text-white pb-2'> Home </Link>
-            <Link to='/operations' className='no-underline text-white'> Records </Link>
+            <Link to='/operations' className='no-underline text-white pb-2'> Records </Link>
+            <Link to='/about' className='no-underline text-white pb-2'> About </Link>
           </div>
             <button className='mt-4' onClick={handleClick}> logout </button>
         </div>
