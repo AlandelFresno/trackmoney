@@ -5,35 +5,43 @@ import './pages.css';
 
 import Operations from '../components/Operations';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { NameLogIn } from '../redux/actions/name';
+
+
 
 
 const HomePage = () => {
 
-
+  const dispatch = useDispatch();
   const total = 1234321;
   const amount = 1000;
   const title = 'title';
   // const operationType = 'Expense';
   const operationType = 'Income';
-
+  const resutl = useSelector(state => state.name);
   const handleClick = async() => {
     // const operations = await axios.get('http://localhost:3001/api/operation', {
-    //   params: {
-    //     name: 'front'
-    //   }
-    // });
-    // const operations = await axios.post('http://localhost:3001/api/operation', {
-    //   title: 'Salary',
+      //   params: {
+        //     name: 'front'
+        //   }
+        // });
+        // const operations = await axios.post('http://localhost:3001/api/operation', {
+          //   title: 'Salary',
+          
     //   operationType: 'Income',
     //   amount: 2000,
     // });
-    const operations = await axios.get('http://localhost:3001/api/users', {
-      params: {
-        name: ''
-      }
-    })
 
-    console.log(operations);
+    dispatch(NameLogIn('dek'));
+    console.log(resutl);
+    // const operations = await axios.get('http://localhost:3001/api/users', {
+    //   params: {
+    //     name: ''
+    //   }
+    // })
+
+    // console.log(operations);
   };
 
 

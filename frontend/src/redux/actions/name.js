@@ -2,15 +2,15 @@ import { types } from "../types";
 
 
 export const NameLogIn = (name) => {
-    console.log(name)
+    // console.log(name)
     return{
-        type: types.authNameLogIn,
+        type: types.NameLogIn,
         name
     };
 };
 
 export const NameLogOut = () => {
     return {
-        type: types.authNameLogOut
+        type: types.NameLogOut
     };
 };

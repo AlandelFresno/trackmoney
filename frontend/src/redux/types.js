@@ -1,12 +1,12 @@
 
 export const types = {
 
-    authLogin: '[AUTH] Login',
-    authLogout: '[AUTH] Logout',
+    authLogIn: '[AUTH] Login',
+    authLogOut: '[AUTH] Logout',
 
 
     
     NameLogIn: '[NAME] NameLogIn',
-    NameLogOut: '[AUTH] NameLogOut'
+    NameLogOut: '[NAME] NameLogOut'
 
 };

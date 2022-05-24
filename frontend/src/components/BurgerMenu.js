@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-
-
+import { Link, useNavigate } from 'react-router-dom';
 import { LogOut } from '../redux/actions/auth';
+import { NameLogOut } from '../redux/actions/name';
+
+
+
 
 const BurgerMenu = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
+        dispatch(NameLogOut());
         dispatch(LogOut());
+        navigate('./login');
       };
 
   return (

@@ -4,18 +4,15 @@ const initialState = {
     name: ''
 };
 
-export const authReducer = (state = initialState, action) => {
-    console.log(action)
-    console.log(action.name)
-    switch (action.types) {
+export const nameReducer = (state = initialState, action) => {
+    switch (action.type) {
 
-        case types.authNameLogIn:
+        case types.NameLogIn:
             return {
-                ...state,
                 name: action.name
             };
 
-        case types.authNameLogOut:
+        case types.NameLogOut:
             return {
                 ...state,
                 name: ''

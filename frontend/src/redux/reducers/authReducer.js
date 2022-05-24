@@ -5,9 +5,9 @@ const initialState = {
 };
 
 export const authReducer = (state = initialState, action) => {
-    
-    switch (action.types) {
-        case types.authLogin:
+    console.log(action);
+    switch (action.type) {
+        case types.authLogIn:
             return {
                 ...state,
                 login: action.token

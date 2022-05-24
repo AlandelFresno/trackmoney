@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './pages.css';
-import { LogIn, NameLogIn } from '../redux/actions/auth';
+import { LogIn } from '../redux/actions/auth';
 import axios from 'axios';
+import { NameLogIn } from '../redux/actions/name';
 
 const LoginPage = () => {
 
