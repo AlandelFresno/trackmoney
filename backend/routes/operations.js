@@ -1,35 +1,32 @@
 
 const express = require('express');
-const User = require('../models/userModel');
+const { User, Operation } = require('../models/index');
 
 const router = express.Router();
 
 
 router.get('/operation', async(req, res) => {
-    console.log(req);
-    await User.findAll()
-        .then(() => {res.json(hello)})
-        .catch((err) => {res.json})
+    
+
+
 });
 
 router.post('/operation', async(req, res) => {
-    // console.log(req);
-    User.update({
-            transactions: [
-                User.transactions,
-                {
-                transactionID: '',
-                title: req.body.title,
-                operationType: req.body.operationType,
-                amount: req.body.amount,
-                createdat:  Date.now()
-            }]
-        },
-        {   
-            where: {transactions: User.transactions || null}
-        }
-    ).then(() => {res.status(200).send('Updated')})
-     .catch((err) => {res.json(err)});
+    
+    Operation.create({
+        name: req.body.name,
+        title: req.body.title,
+        amount: req.body.amount,
+        operationType: req.body.operationType,
+        createdAt: Date.now()
+    })
+    .then( () => {
+        res.status(200).send('User created');
+    })
+    .catch((err) => {
+        res.send(err.message);
+    });
+
 });
 
 module.exports = router;

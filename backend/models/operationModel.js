@@ -1,27 +1,19 @@
-
 const Sequelize = require('sequelize');
 const sequelize = require('../database/connection');
 
-const User = sequelize.define('users', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
-    name: {
+const Operation = sequelize.define('operations', {
+    operationType: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    email: {
+    title: {
         type: Sequelize.STRING,
+    },
+    amount: {
+        type: Sequelize.FLOAT,
         allowNull: false
     },
-    password: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    createdat: {
+    createAt: {
         type: Sequelize.DATE,
         allowNull: false
     }
@@ -29,4 +21,4 @@ const User = sequelize.define('users', {
     timestamps: false
 });
 
-module.exports = User;
+module.exports = Operation;
