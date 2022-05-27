@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../database/connection');
+const db = require('../database/connection');
 
-const Operation = sequelize.define('operations', {
+const Operation = db.define('operations', {
     operationType: {
         type: Sequelize.STRING,
         allowNull: false

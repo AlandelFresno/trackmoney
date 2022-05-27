@@ -13,18 +13,24 @@ router.get('/operation', async(req, res) => {
 
 router.post('/operation', async(req, res) => {
     
+    User.findAll({})
+    console.log(req.body.params)
+
     Operation.create({
-        name: req.body.name,
-        title: req.body.title,
-        amount: req.body.amount,
-        operationType: req.body.operationType,
-        createdAt: Date.now()
+        operationType: req.body.params.operationType,
+        title: req.body.params.title,
+        amount: req.body.params.amount,
+        userID: req.body.params.userID,
+        createAt: Date.now(),
     })
     .then( () => {
-        res.status(200).send('User created');
+        res.status(200).send('Op created');
+        console.log('then operation.create');
     })
     .catch((err) => {
         res.send(err.message);
+        console.log('catch operation.create');
+        console.log(err);
     });
 
 });
