@@ -7,6 +7,21 @@ const router = express.Router();
 
 router.get('/operation', async(req, res) => {
     
+    // console.log(req.body);
+    // console.log(req.query);
+    // console.log(req.params);
+    // console.log(req.query.userID);
+    Operation.findAll({
+        where: {
+            userID: req.query.userID
+        }
+    }).then( (ops) => {
+        console.log(ops)
+        res.status(200).json(ops);
+    }).catch((err) => {
+        console.log(err);
+        res.send(err.message);
+    });
 
 
 });
@@ -35,4 +50,11 @@ router.post('/operation', async(req, res) => {
 
 });
 
+router.delete('/operation', () => {
+    // Operation.destroy({
+    //     where: {
+    //         id: ''
+    //     }
+    // })
+})
 module.exports = router;

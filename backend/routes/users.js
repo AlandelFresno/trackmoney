@@ -6,7 +6,7 @@ const User = require('../models/userModel');
 router.get('/users', async(req, res) =>{
 
     if ( req.query.name !== undefined) {
-        await User.findAll({
+        User.findAll({
             where:{
                 name: req.query.name
             }
