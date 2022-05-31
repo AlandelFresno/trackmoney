@@ -52,7 +52,7 @@ const LoginPage = () => {
   
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // console.log(e.target[1].value);
+    // console.log(e.target[0].value);
     const userNameInput = e.target[0].value;
     const passwordInput = e.target[1].value;
     const validation = await isValidate(userNameInput, passwordInput);
