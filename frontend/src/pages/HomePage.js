@@ -13,10 +13,11 @@ import { useSelector } from 'react-redux';
 const HomePage = () => {
 
   
-  const total = 1234321;
+  
   const reduxName = useSelector(state => state.name);
   const [records, setRecords] = useState([]);
-  
+  const [total, setTotal] = useState(0);
+
   useEffect(() => {
     const getId = async() => {
       const {data} = await axios.get('http://localhost:3001/api/users', {params: {name: reduxName.name}});
@@ -32,6 +33,17 @@ const HomePage = () => {
         }
       });
       // console.log(record);
+      let tot = 0;
+      for ( let i = 0; i < record.data.length; i++) {
+        const operationAmount = record.data[i].amount;
+        if ( record.data[i].operationType == 'Expense') {
+          tot = tot - operationAmount;
+        } else {
+          tot = tot + operationAmount;
+        }
+        // console.log(tot);
+        setTotal(tot);    
+      };
       setRecords(record.data);
     };
     getOperations();
@@ -60,7 +72,7 @@ const HomePage = () => {
               records.length > 0 ? 
                 records.map((prop) => {
                   // console.log(prop)
-                  return <Operations amount={prop.amount} title={prop.title} operationType={prop.operationType} />
+                  return <Operations key={prop.id} amount={prop.amount} title={prop.title} operationType={prop.operationType} />
                 }) 
                 : 
                 <p> You don't have any record</p>

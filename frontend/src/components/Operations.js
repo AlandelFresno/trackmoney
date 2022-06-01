@@ -1,6 +1,7 @@
 import React from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Swal from 'sweetalert2';
 
 const Operations = (params) => {
 
@@ -8,7 +9,15 @@ const Operations = (params) => {
     
     // console.log(amount, title, operationType);
 
+    const handleClickEdit = () => {
 
+    };
+
+    const handleClickDelete = () => {
+
+        Swal.fire()
+
+    };
 
   return (
     <div className='flex w-96 justify-between items-center border boder-solid rounded-md border-white'>
@@ -21,8 +30,8 @@ const Operations = (params) => {
             
         }
         <div>
-            <EditIcon className='cursor-pointer' fontSize='small'/>
-            <DeleteIcon className='cursor-pointer' fontSize='small'/>
+            <EditIcon onClick={handleClickEdit} className='cursor-pointer' fontSize='small'/>
+            <DeleteIcon onClick={handleClickDelete} className='cursor-pointer' fontSize='small'/>
         </div>
     </div>
   );
