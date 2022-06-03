@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import './pages.css';
 import Operations from '../components/Operations';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+// import axios from 'axios';
 import { useSelector } from 'react-redux';
+import OpObtain from '../helpers/OpObtain';
 
 
 
@@ -12,44 +13,18 @@ import { useSelector } from 'react-redux';
 
 const HomePage = () => {
 
-  
-  
-  const reduxName = useSelector(state => state.name);
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([{ id: '', amount: '', title: '', operationType: ''}]);
   const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    const getId = async() => {
-      const {data} = await axios.get('http://localhost:3001/api/users', {params: {name: reduxName.name}});
-      // console.log(data[0].id);
-      return data[0].id;
+  const reduxName = useSelector(state => state.name);  // gets redux username
+  useEffect(() => { // gets total amount and operations
+    const fetchData = async() => {
+      const resultOpOb = await OpObtain(reduxName.name);
+      const {record, tot} = resultOpOb; 
+      setTotal(tot);
+      setRecords(record);
     };
-    const getOperations = async() => {
-      const userID = await getId();
-      // console.log(userID);
-      const record = await axios.get('http://localhost:3001/api/operation', {
-        params: {
-          userID: userID
-        }
-      });
-      // console.log(record);
-      let tot = 0;
-      for ( let i = 0; i < record.data.length; i++) {
-        const operationAmount = record.data[i].amount;
-        if ( record.data[i].operationType == 'Expense') {
-          tot = tot - operationAmount;
-        } else {
-          tot = tot + operationAmount;
-        }
-        // console.log(tot);
-        setTotal(tot);    
-      };
-      setRecords(record.data);
-    };
-    getOperations();
+    fetchData();
   }, [reduxName]);
-  
-
 
   const handleClick = () => {
     Swal.fire('Any fool can use a computer');
@@ -68,14 +43,13 @@ const HomePage = () => {
         </div>
           <div className='border border-white border-solid rounded-lg p-2'>
             {
-
+              // render 10 operations or a <p></p>
               records.length > 0 ? 
-                records.map((prop) => {
-                  // console.log(prop)
+                records.slice(0, 9).map((prop) => {
                   return <Operations key={prop.id} amount={prop.amount} title={prop.title} operationType={prop.operationType} />
                 }) 
                 : 
-                <p> You don't have any record</p>
+                <p> You don't have any records </p>
             }
           </div>
           <button 
