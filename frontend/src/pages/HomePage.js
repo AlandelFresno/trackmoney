@@ -45,8 +45,8 @@ const HomePage = () => {
             {
               // render 10 operations or a <p></p>
               records.length > 0 ? 
-                records.slice(0, 9).map((prop) => {
-                  return <Operations key={prop.id} amount={prop.amount} title={prop.title} operationType={prop.operationType} />
+                records.slice(records.length-10, records.length).map((prop) => {
+                  return <Operations key={prop.id} id={prop.id} amount={prop.amount} title={prop.title} operationType={prop.operationType} />
                 }) 
                 : 
                 <p> You don't have any records </p>
