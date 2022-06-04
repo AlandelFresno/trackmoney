@@ -6,17 +6,11 @@ const router = express.Router();
 
 
 router.get('/operation', async(req, res) => {
-    
-    // console.log(req.body);
-    // console.log(req.query);
-    // console.log(req.params);
-    // console.log(req.query.userID);
     Operation.findAll({
         where: {
             userID: req.query.userID
         }
     }).then( (ops) => {
-        console.log(ops)
         res.status(200).json(ops);
     }).catch((err) => {
         console.log(err);
@@ -29,7 +23,7 @@ router.get('/operation', async(req, res) => {
 router.post('/operation', async(req, res) => {
     
     User.findAll({})
-    console.log(req.body.params)
+    // console.log(req.body.params)
 
     Operation.create({
         operationType: req.body.params.operationType,
@@ -50,11 +44,23 @@ router.post('/operation', async(req, res) => {
 
 });
 
-router.delete('/operation', () => {
-    // Operation.destroy({
-    //     where: {
-    //         id: ''
-    //     }
-    // })
-})
+router.delete('/operation', (req, res) => {
+
+    console.log(req)
+    
+
+    Operation.destroy({
+        where: {
+            id: req.query.id
+        }
+    }).then ( () => {
+        res.status(200).send('Op deleted');
+        console.log('Operation deleted');
+    }).catch((err) => {
+        res.send(err.message);
+        console.log('catch operation.delete');
+        console.log(err);
+    });
+});
+
 module.exports = router;
