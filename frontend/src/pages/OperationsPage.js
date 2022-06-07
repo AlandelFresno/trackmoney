@@ -29,7 +29,7 @@ const OperationsPage = () => {
   }, [userName]);
   
   //pagination
-  const postPerPage = 1;
+  const postPerPage = 10;
   // Get current posts
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -66,16 +66,54 @@ const OperationsPage = () => {
                   :
                   <p> You don't have any records </p>
                }
-                <nav>
+                <nav className='flex justify-center items-center'>
+                <a className='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(1)}} href='/operations/!#'> First page</a>
                   <ul className='flex no-underline list-none p-0'>
-                    {pageNumbers.map(number => (
-                      <li key={number} className=''>
-                        <a className='no-underline text-white pl-2' onClick={(e) => {e.preventDefault(); paginate(number)}} href='/operations/!#'>
-                          {number}
-                        </a>
-                      </li>
-                    ))}
+                    {
+                      currentPage < 2 ? 
+                      pageNumbers.slice(currentPage-1, currentPage+5).map(number => (
+                        <li key={number} className=''>
+                          <a className='no-underline text-white pl-2' onClick={(e) => {e.preventDefault(); paginate(number)}} href='/operations/!#'>
+                            {number}
+                          </a>
+                        </li>
+                      ))
+                      : currentPage < 3 ?
+
+                      pageNumbers.slice(currentPage-2, currentPage+5).map(number => (
+                        <li key={number} className=''>
+                          <a className='no-underline text-white pl-2' onClick={(e) => {e.preventDefault(); paginate(number)}} href='/operations/!#'>
+                            {number}
+                          </a>
+                        </li>
+                      )) 
+                      : currentPage < 4 ? 
+                      pageNumbers.slice(currentPage-3, currentPage+5).map(number => (
+                        <li key={number} className=''>
+                          <a className='no-underline text-white pl-2' onClick={(e) => {e.preventDefault(); paginate(number)}} href='/operations/!#'>
+                            {number}
+                          </a>
+                        </li>
+                      )) 
+                      : currentPage < 5 ?
+                      pageNumbers.slice(currentPage-4, currentPage+5).map(number => (
+                        <li key={number} className=''>
+                          <a className='no-underline text-white pl-2' onClick={(e) => {e.preventDefault(); paginate(number)}} href='/operations/!#'>
+                            {number}
+                          </a>
+                        </li>
+                      )) 
+                      :
+                      pageNumbers.slice(currentPage-5, currentPage+5).map(number => (
+                        <li key={number} className=''>
+                          <a className='no-underline text-white pl-2' onClick={(e) => {e.preventDefault(); paginate(number)}} href='/operations/!#'>
+                            {number}
+                          </a>
+                        </li>
+                      )) 
+                    }
                   </ul>
+                  <a className='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(pageNumbers.length )}} href='/operations/!#'> Last Page</a>
                 </nav>
               </div>
             </div>
