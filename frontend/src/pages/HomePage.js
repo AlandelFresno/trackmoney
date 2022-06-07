@@ -6,9 +6,7 @@ import Swal from 'sweetalert2';
 // import axios from 'axios';
 import { useSelector } from 'react-redux';
 import OpObtain from '../helpers/OpObtain';
-
-
-
+import obtainName from '../helpers/obtainName';
 
 
 const HomePage = () => {
@@ -16,15 +14,16 @@ const HomePage = () => {
   const [records, setRecords] = useState([{ id: '', amount: '', title: '', operationType: ''}]);
   const [total, setTotal] = useState(0);
   const reduxName = useSelector(state => state.name);  // gets redux username
+  const userName = obtainName(reduxName);
   useEffect(() => { // gets total amount and operations
     const fetchData = async() => {
-      const resultOpOb = await OpObtain(reduxName.name);
+      const resultOpOb = await OpObtain(userName);
       const {record, tot} = resultOpOb; 
       setTotal(tot);
       setRecords(record);
     };
     fetchData();
-  }, [reduxName]);
+  }, [userName]);
 
   const handleClick = () => {
     Swal.fire('Any fool can use a computer');

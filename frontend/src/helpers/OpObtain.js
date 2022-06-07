@@ -26,7 +26,7 @@ const OpObtain = async(name) => {
       };
       return { // returns total amount and all operations
         tot,
-        record: record.data
+        record: record.data.reverse()
       };
     };
     const result = await getOperations(); // calls getOperations function and saves it

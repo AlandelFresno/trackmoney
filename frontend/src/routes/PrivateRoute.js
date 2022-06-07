@@ -14,6 +14,7 @@ const PrivateRoute = () => {
       <Routes>
         <Route path='/home' element={<HomePage />} />
         <Route path='/operations' element={<OperationsPage/>}/>
+        <Route path='/operations/!#' element={<OperationsPage/>}/>
         <Route path='/about' element={<AboutPage />}/>
         <Route exact path='*' element={<Navigate to='/home' />} />
       </Routes>
