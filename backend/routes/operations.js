@@ -22,7 +22,7 @@ router.get('/operation', async(req, res) => {
 
 router.post('/operation', async(req, res) => {
     
-    User.findAll({})
+    // User.findAll({})
     // console.log(req.body.params)
 
     Operation.create({
@@ -45,10 +45,7 @@ router.post('/operation', async(req, res) => {
 });
 
 router.delete('/operation', (req, res) => {
-
-    console.log(req)
-    
-
+    // console.log(req)
     Operation.destroy({
         where: {
             id: req.query.id
@@ -63,4 +60,29 @@ router.delete('/operation', (req, res) => {
     });
 });
 
+router.put('/operation', (req, res) => {
+    // req.params.id // id
+    // req.query // operation data
+    console.log(req.query)
+    console.log(req.body)
+
+    // const operation = Operation.findAll({ where: {id: req.query.id}})
+    Operation.update(
+        {
+            title: req.body.title,
+            amount: req.body.amount,
+            operationType: req.body.operationType
+        },
+        { 
+            where: { id: req.body.id}
+        }
+    ).then (() => {
+        console.log('put then');
+        res.send('hello');
+    }).catch(err => {
+        console.log('put catch');
+        console.log(err);
+        res.status(400).send(err)
+    });
+});
 module.exports = router;
