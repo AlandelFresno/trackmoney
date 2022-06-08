@@ -39,7 +39,6 @@ const OperationsPage = () => {
   for (let i = 1; i <= Math.ceil(records.length / postPerPage); i++) {
     pageNumbers.push(i)
   };
-
   
   // HandleClick
   const paginate = (pageNumber) => {
@@ -56,7 +55,7 @@ const OperationsPage = () => {
         <div className='flex  flex-col items-center'>
             <h4 className='mt-8'>OPERATIONS</h4>
             <h6 className='text-xl flex'> Total:  { total < 0 ? <p className='text-red-700 pl-2 m-0'>{total}</p>  : <p className='text-green-700 pl-2 m-0'>{total}</p> } </h6>
-            <div className='flex  h-screen flex-col'>
+            <div className='flex flex-col'>
               <div className='border border-solid rounded-xl pl-2 pr-2 flex flex-col items-center'>
                {
                  currentPost.length > 0 ? 
