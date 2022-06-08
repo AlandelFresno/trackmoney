@@ -28,8 +28,6 @@ const HomePage = () => {
   const handleClick = () => {
     Swal.fire('Any fool can use a computer');
   };
-  
-  
 
   return (
     <div className=' w-screen h-screen text-white'>
@@ -44,7 +42,7 @@ const HomePage = () => {
             {
               // render 10 operations or a <p></p>
               records.length > 0 ? 
-                records.slice(records.length-10, records.length).map((prop) => {
+                records.slice(0, 10).map((prop) => {
                   return <Operations key={prop.id} id={prop.id} amount={prop.amount} title={prop.title} operationType={prop.operationType} />
                 }) 
                 : 
