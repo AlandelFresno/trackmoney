@@ -4,3 +4,13 @@
     max-width: 150px;
     width: 150px;
 }
+.input_swal {
+    background-color: #1f1f1f;
+    border-radius: 0.5rem;
+}
+.customSwalBtn {
+    border-radius: 0.75rem;
+}
+#swal-input1 {
+    margin-left: 70px;
+}
