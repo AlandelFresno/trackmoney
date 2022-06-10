@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { useSelector } from 'react-redux';
 import OpObtain from '../helpers/OpObtain';
 import obtainName from '../helpers/obtainName';
+import axios from 'axios';
 
 
 const HomePage = () => {
@@ -26,19 +27,77 @@ const HomePage = () => {
   }, [userName]);
 
   const handleClick = () => {
-    Swal.fire('Any fool can use a computer');
+    Swal.fire({
+      title: 'New the operation',
+      showCancelButton: true,
+      color: 'white',
+      background: '#1f1f1f',
+      confirmButtonColor: 'green',
+      cancelButtonColor: 'red',
+      html: 
+          `<label> Title </label>` +
+          `<input id='swal-input1' placeholder='Title' class='swal2-input customSwalBtn'/>` +
+          `<label> Amount </label>` +
+          `<input id='swal-input2' type='number' placeholder='Amount' class='swal2-input customSwalBtn'/>`,
+      input: 'select',
+      inputOptions: {
+          Expense: 'Expense',
+          Income: 'Income'
+      },
+      customClass: {
+          input: 'input_swal',
+      }
+  }).then(async(result) => {
+      console.log(result);
+      if(result.isConfirmed){
+        const resultTitle = document.getElementById('swal-input1').value;
+        const resultAmount = document.getElementById('swal-input2').value;
+        // console.log(resultTitle, resultAmount)
+
+            const axiosResults = await axios.get('http://localhost:3001/api/users', {
+              params: {
+                name: userName
+              }
+            })
+            const userData = axiosResults.data[0];
+          axios.post(`http://localhost:3001/api/operation`, {
+              params: {
+                title: resultTitle,
+                amount: resultAmount,
+                operationType: result.value,
+                userID: userData.id
+              }
+          }).then().catch(err => console.log(err));
+          Swal.fire({
+              title: 'Operation created',
+              icon: 'success',
+              color: 'white',
+              confirmButtonColor: 'green',
+              iconColor: 'green',
+              background: '#1f1f1f',
+              timer: 3000,
+          }).then(() => {document.location.reload()});
+      };
+  }).catch(err => console.log(err));
   };
 
   return (
     <div className=' w-screen h-screen text-white'>
       <div className='flex flex-col items-center'>
         <div className=''>
-          <h4 className=' text-5xl w-96 h-16 flex 
+          <h4 className=' text-5xl w-96 flex 
                           justify-center items-center 
-                          border border-white border-solid rounded-xl'
+                          border border-white border-solid rounded-xl
+                          bg-gray-500 m-0 p-0 mt-8 mb-8'
           > $ {total} </h4>
         </div>
-          <div className='border border-white border-solid rounded-lg p-2'>
+          <button 
+            className='page_button w-64 h-10 text-xl border-none rounded-lg mb-16 bg-gray-500 text-white cursor-pointer'
+            onClick={handleClick}
+          > 
+            New record
+          </button>
+          <div className='border-none border-solid rounded-lg p-8 bg-gray-900 '>
             {
               // render 10 operations or a <p></p>
               records.length > 0 ? 
@@ -49,12 +108,6 @@ const HomePage = () => {
                 <p> You don't have any records </p>
             }
           </div>
-          <button 
-            className='page_button w-32 h-8 border-2 border-white rounded-lg mt-4'
-            onClick={handleClick}
-          > 
-            New record
-          </button>
       </div>
     </div>
   );

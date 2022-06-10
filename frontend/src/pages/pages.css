@@ -15,12 +15,14 @@
 .bg_loginpage {
     /* background: rgb(18,116,117);
     background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(17,187,187,1) 100%); */
-    background: rgb(18,116,117);
-    background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(0,158,158,1) 100%);
+    /* background: rgb(18,116,117);
+    background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(0,158,158,1) 100%); */
+    background: rgb(80, 80, 80);
+    background: linear-gradient(90deg, rgb(41, 41, 41) 30%, rgb(0, 0, 0) 100%);
 }
 
 .form_loginpage {
-    background-color: #2e2e2e83;
+    background-color: #817f7f83;
     /* background-color: #034447; */
     /* border: 2px solid #11BBBB; */
     /* background-color: #470208; */
@@ -40,4 +42,29 @@
 
 .operation_width {
     width: 45rem;
+}
+.operation_h4 {
+    font-size: 30px;
+}
+
+/* Swal */
+
+
+.input_swal {
+    background-color: #1f1f1f;
+    border-radius: 0.5rem;
+}
+.customSwalBtn {
+    border-radius: 0.75rem;
+}
+#swal-input1 {
+    margin-left: 70px;
+}
+#swal-input2::-webkit-inner-spin-button,
+#swal-input2::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#swal-input2[type=number] {
+    -moz-appearance: none;
 }

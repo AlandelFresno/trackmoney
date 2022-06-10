@@ -1,7 +1,9 @@
 // import axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import Operations from '../components/Operations';
 import obtainName from '../helpers/obtainName';
 import OpObtain from '../helpers/OpObtain';
@@ -9,7 +11,6 @@ import OpObtain from '../helpers/OpObtain';
 const OperationsPage = () => {
 
   const reduxName = useSelector(state => state.name);
-  const [total, setTotal] = useState(0);
   const [records, setRecords] = useState([{id:''}]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,8 +21,7 @@ const OperationsPage = () => {
     const fetchData = async() => {
       setLoading(true);
       const resultOpOb = await OpObtain(userName);
-      const {record, tot} = resultOpOb; 
-      setTotal(tot);
+      const {record} = resultOpOb; 
       setRecords(record);
       setLoading(false);
     };
@@ -29,7 +29,7 @@ const OperationsPage = () => {
   }, [userName]);
   
   //pagination
-  const postPerPage = 10;
+  const postPerPage = 13;
   // Get current posts
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -40,7 +40,7 @@ const OperationsPage = () => {
     pageNumbers.push(i)
   };
   
-  // HandleClick
+  // HandleClick pagination
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     return <Navigate to={pageNumber}/>
@@ -49,12 +49,74 @@ const OperationsPage = () => {
   if(loading) {
     return <h2> Loading... </h2>;
   };
-    
+  
+  // Operation create
+  const handleClick = () => {
+    Swal.fire({
+      title: 'New the operation',
+      showCancelButton: true,
+      color: 'white',
+      background: '#1f1f1f',
+      confirmButtonColor: 'green',
+      cancelButtonColor: 'red',
+      html: 
+          `<label> Title </label>` +
+          `<input id='swal-input1' placeholder='Title' class='swal2-input customSwalBtn'/>` +
+          `<label> Amount </label>` +
+          `<input id='swal-input2' type='number' placeholder='Amount' class='swal2-input customSwalBtn'/>`,
+      input: 'select',
+      inputOptions: {
+          Expense: 'Expense',
+          Income: 'Income'
+      },
+      customClass: {
+          input: 'input_swal',
+      }
+  }).then(async(result) => {
+      console.log(result);
+      if(result.isConfirmed){
+        const resultTitle = document.getElementById('swal-input1').value;
+        const resultAmount = document.getElementById('swal-input2').value;
+        // console.log(resultTitle, resultAmount)
+
+            const axiosResults = await axios.get('http://localhost:3001/api/users', {
+              params: {
+                name: userName
+              }
+            })
+            const userData = axiosResults.data[0];
+          axios.post(`http://localhost:3001/api/operation`, {
+              params: {
+                title: resultTitle,
+                amount: resultAmount,
+                operationType: result.value,
+                userID: userData.id
+              }
+          }).then().catch(err => console.log(err));
+          Swal.fire({
+              title: 'Operation created',
+              icon: 'success',
+              color: 'white',
+              confirmButtonColor: 'green',
+              iconColor: 'green',
+              background: '#1f1f1f',
+              timer: 3000,
+          }).then(() => {document.location.reload()});
+      };
+  }).catch(err => console.log(err));
+  };
+
+
     return (
       <div className='text-white'>
         <div className='flex  flex-col items-center'>
-            <h4 className='mt-8'>OPERATIONS</h4>
-            <h6 className='text-xl flex'> Total:  { total < 0 ? <p className='text-red-700 pl-2 m-0'>{total}</p>  : <p className='text-green-700 pl-2 m-0'>{total}</p> } </h6>
+            <h4 className='mt-16 operation_h4'>OPERATIONS</h4>
+            <button 
+            className='page_button w-56 h-10 text-xl border-none rounded-lg mb-16 bg-gray-500 text-white cursor-pointer'
+            onClick={handleClick}
+          > 
+            New record
+          </button>
             <div className='flex flex-col'>
               <div className='border border-solid rounded-xl pl-2 pr-2 flex flex-col items-center'>
                {

@@ -1,8 +1,7 @@
 
 const express = require('express');
-const { User, Operation } = require('../models/index');
-
 const router = express.Router();
+const { Operation } = require('../models/index');
 
 
 router.get('/operation', async(req, res) => {
@@ -16,15 +15,10 @@ router.get('/operation', async(req, res) => {
         console.log(err);
         res.send(err.message);
     });
-
-
 });
 
 router.post('/operation', async(req, res) => {
-    
-    // User.findAll({})
     // console.log(req.body.params)
-
     Operation.create({
         operationType: req.body.params.operationType,
         title: req.body.params.title,
@@ -34,14 +28,13 @@ router.post('/operation', async(req, res) => {
     })
     .then( () => {
         res.status(200).send('Op created');
-        console.log('then operation.create');
+        // console.log('then operation.create');
     })
     .catch((err) => {
         res.send(err.message);
-        console.log('catch operation.create');
+        // console.log('catch operation.create');
         console.log(err);
     });
-
 });
 
 router.delete('/operation', (req, res) => {
@@ -52,10 +45,10 @@ router.delete('/operation', (req, res) => {
         }
     }).then ( () => {
         res.status(200).send('Op deleted');
-        console.log('Operation deleted');
+        // console.log('Operation deleted');
     }).catch((err) => {
         res.send(err.message);
-        console.log('catch operation.delete');
+        // console.log('catch operation.delete');
         console.log(err);
     });
 });
@@ -63,10 +56,6 @@ router.delete('/operation', (req, res) => {
 router.put('/operation', (req, res) => {
     // req.params.id // id
     // req.query // operation data
-    console.log(req.query)
-    console.log(req.body)
-
-    // const operation = Operation.findAll({ where: {id: req.query.id}})
     Operation.update(
         {
             title: req.body.title,
@@ -77,10 +66,10 @@ router.put('/operation', (req, res) => {
             where: { id: req.body.id}
         }
     ).then (() => {
-        console.log('put then');
+        // console.log('put then');
         res.send('hello');
     }).catch(err => {
-        console.log('put catch');
+        // console.log('put catch');
         console.log(err);
         res.status(400).send(err)
     });
