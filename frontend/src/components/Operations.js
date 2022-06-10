@@ -8,8 +8,6 @@ import axios from 'axios';
 const Operations = (params) => {
 
     const {amount, title, operationType, id} = params;
-    
-    console.log(title)
 
     const handleClickEdit = () => {
         Swal.fire({
@@ -23,15 +21,7 @@ const Operations = (params) => {
                 `<label> Title </label>` +
                 `<input id='swal-input1' placeholder=${title} class='swal2-input customSwalBtn'/>` +
                 `<label> Amount </label>` +
-                `<input id='swal-input2' placeholder=${amount} class='swal2-input customSwalBtn'/>`,
-            input: 'select',
-            inputOptions: {
-                Expense: 'Expense',
-                Income: 'Income'
-            },
-            customClass: {
-                input: 'input_swal',
-            }
+                `<input id='swal-input2' placeholder=${amount} class='swal2-input customSwalBtn'/>`
         }).then((result) => {
             if(result.isConfirmed){
                 let resultAmount;
@@ -51,7 +41,6 @@ const Operations = (params) => {
                     id,
                     title: resultTitle,
                     amount: resultAmount,
-                    operationType: result.value
                 }).then().catch(err => console.log(err));
                 Swal.fire({
                     title: 'Operation updated',
