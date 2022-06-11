@@ -96,7 +96,7 @@ const RegisterPage = () => {
 
   return (
     <div className='w-screen'>
-      <div className='flex h-screen justify-center items-center'>
+      <div className='flex h-screen justify-center items-center bg_register'>
         <form 
             className=' flex flex-col items-center p-32 w-96  
                         rounded-xl form_registerpage'
@@ -150,7 +150,7 @@ const RegisterPage = () => {
         <span className='text-red-600 text-xs'> { value.confirmpasswordErr } </span>
 
         <button
-          className='page_button w-32 h-8 border-2 border-white rounded-lg mt-6 form_button'
+          className='page_button w-32 h-8 border-2 rounded-lg mt-6 form_button'
           
         > Register </button>
         <Link to='/login' className='pt-8 link_publicpage'> Log in </Link>

@@ -83,7 +83,7 @@ const LoginPage = () => {
         <span className='text-red-600 text-xs pb-2'>  {valid.passwordErr} </span>
         <span className='text-red-600 text-xs pb-2'>  {valid.validationErr} </span>
         <button
-          className='w-32 h-8 border-2 border-white rounded-lg mt-6 form_button'
+          className='w-32 h-8 border-2 rounded-lg mt-6 form_button'
           
         > Log In </button>
         <Link to='/register' className='pt-8 link_publicpage'> Create Account </Link>

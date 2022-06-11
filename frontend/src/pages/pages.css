@@ -1,14 +1,20 @@
 /* LoginPage && RegisterPage */
-.form_button:hover {
-    background-color: #11BBBB;   
-    border-color: #11BBBB;
+.form_button {
+    background-color: #16669b;
+    border-color: #0D4367;
+    border-style: solid;
     color: whitesmoke;
 }
+.form_button:hover {
+    background-color: #BBE1FA;   
+    border-color: #BBE1FA;
+    color: black;
+}
 .link_publicpage {
-    color: #11BBBB;
+    color: #BBE1FA;
 }
 .input_publicpage:focus-visible {
-    outline: 4px solid #11BBBB;
+    outline: 4px solid #BBE1FA;
 }
 /* LoginPage */
 
@@ -17,26 +23,55 @@
     background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(17,187,187,1) 100%); */
     /* background: rgb(18,116,117);
     background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(0,158,158,1) 100%); */
-    background: rgb(80, 80, 80);
-    background: linear-gradient(90deg, rgb(41, 41, 41) 30%, rgb(0, 0, 0) 100%);
+    /* background: rgb(80, 80, 80); */
+    background: linear-gradient(90deg, #06273D 40%, #02162C 100%);
 }
 
 .form_loginpage {
-    background-color: #817f7f83;
+    background-color: #0D4367;
     /* background-color: #034447; */
     /* border: 2px solid #11BBBB; */
     /* background-color: #470208; */
 }    
 .login_border_color {
-    border-color: #A31621;
+    border-color: #2978AC;
+    
 }
 
 /* RegisterPage */
 
-.form_registerpage {
-    background-color: #2E2E2E;
-    border: 2px solid #11BBBB;
+.bg_register {
+    background: linear-gradient(180deg, #06273D 0%, #02162C 100%);
 }
+.form_registerpage {
+    background-color: #0D4367;
+}
+/* WelcomePage */
+
+.bg_welcome{
+    background: linear-gradient(0deg, #06273D 0%, #02162C 100%);
+}
+.button_welcome {
+    cursor: pointer;
+    background-color: #16669b;
+    border-color: #0D4367;
+    border-style: solid;
+    color: whitesmoke;
+}
+.button_welcome:hover {
+    background-color: #BBE1FA;   
+    border-color: #BBE1FA;
+    color: black;
+    height: 2.75rem;
+    width: 9.5rem;
+}
+.Link_welcome {    
+    color: whitesmoke;
+}
+.Link_welcome:hover {
+    color: black;
+}
+
 
 /* OperationPage */
 
