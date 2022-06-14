@@ -14,3 +14,32 @@
 #swal-input1 {
     margin-left: 70px;
 }
+
+/* BurgerMenu */
+.bg_burgerMenu {
+    font-size: 1.4rem;
+    background-color: #0D4367;
+    border-color: #0D4367;
+    border-style: solid;
+    color: whitesmoke;
+}
+.bg_burgerMenu:hover {
+    background-color: #0e4a72;
+    border-color: #0e4a72;
+}
+.logoutbutton {
+    cursor: pointer;
+    background-color: #2978AC;
+    border-color: #2978AC;
+    border-radius: 0.25rem;
+    border-style: solid;
+    color: white;
+}
+.logoutbutton:hover {
+    background-color: #BBE1FA;
+    border-color: #BBE1FA;
+    color: black;
+}
+.link_burger:hover {
+    color: #BBE1FA;
+}
