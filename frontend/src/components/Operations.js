@@ -90,12 +90,12 @@ const Operations = (params) => {
 
   return (
     <div className='flex justify-between operation_width items-center border boder-solid rounded-md border-white'>
-        <h5 className='title_width'>{title}</h5>
+        <h5 className='title_width text-sm'>{title}</h5>
         {
             operationType === 'Income' ? 
-                <p className='text-green-700'> ${amount} </p>  
+                <p className='text-green-700 text-base'> ${amount} </p>  
             :
-                <p className='text-red-600'> ${amount} </p>
+                <p className='text-red-600 base'> ${amount} </p>
         }
         <div className='title_width flex justify-end'>
             <EditIcon onClick={handleClickEdit} className='cursor-pointer' fontSize='small'/>

@@ -19,23 +19,14 @@
 /* LoginPage */
 
 .bg_loginpage {
-    /* background: rgb(18,116,117);
-    background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(17,187,187,1) 100%); */
-    /* background: rgb(18,116,117);
-    background: linear-gradient(90deg, rgba(18,116,117,1) 0%, rgba(0,158,158,1) 100%); */
-    /* background: rgb(80, 80, 80); */
     background: linear-gradient(90deg, #06273D 40%, #02162C 100%);
 }
 
 .form_loginpage {
     background-color: #0D4367;
-    /* background-color: #034447; */
-    /* border: 2px solid #11BBBB; */
-    /* background-color: #470208; */
 }    
 .login_border_color {
     border-color: #2978AC;
-    
 }
 
 /* RegisterPage */
@@ -52,10 +43,10 @@
     background: linear-gradient(0deg, #06273D 0%, #02162C 100%);
 }
 .button_welcome {
-    cursor: pointer;
     background-color: #16669b;
     border-color: #0D4367;
     border-style: solid;
+    cursor: pointer;
     color: whitesmoke;
 }
 .button_welcome:hover {
@@ -74,14 +65,59 @@
 
 
 /* OperationPage */
-
+.bg_operationPage {
+    background: linear-gradient(45deg, #06273D 30%, #02162C 100%);
+}
 .operation_width {
     width: 45rem;
 }
 .operation_h4 {
     font-size: 30px;
 }
+.bg_operationList {
+    background-color: #0D4367;
+    border-color: #0D4367;
+}
+.button_operationPage  {
+    background-color: #0D4367;
+    border-color: #0D4367;
+    border-style: solid;
+    color: whitesmoke;
+}
+.button_operationPage:hover {
+    background-color: #BBE1FA;
+    border-color: #BBE1FA;
+    color: black;
+    font-size: 1.35rem;
+    line-height: 1.55rem;
+}
 
+/* HomePage */
+.bg_homePage {
+    background: linear-gradient(230deg, #06273D 30%, #02162C 100%);
+}
+.border_total {
+    border-color: #0D4367;
+    background-color: #0D4367;
+    height: 3.75rem;
+}
+
+.button_home  {
+    background-color: #0D4367;
+    border-color: #0D4367;
+    border-style: solid;
+    color: whitesmoke;
+}
+.button_home:hover {
+    background-color: #BBE1FA;
+    border-color: #BBE1FA;
+    color: black;
+    font-size: 1.35rem;
+    line-height: 1.55rem;
+}
+.bg-tenOperations {
+    background-color: #0D4367;
+}
 /* Swal */
 
 

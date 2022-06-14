@@ -109,16 +109,16 @@ const OperationsPage = () => {
 
     return (
       <div className='text-white'>
-        <div className='flex  flex-col items-center'>
+        <div className='flex  flex-col items-center bg_operationPage'>
             <h4 className='mt-16 operation_h4'>OPERATIONS</h4>
             <button 
-            className='page_button w-56 h-10 text-xl border-none rounded-lg mb-16 bg-gray-500 text-white cursor-pointer'
-            onClick={handleClick}
-          > 
-            New record
-          </button>
-            <div className='flex flex-col'>
-              <div className='border border-solid rounded-xl pl-2 pr-2 flex flex-col items-center'>
+              className='page_button w-56 h-10 text-xl border-none rounded-lg mb-16 cursor-pointer button_operationPage'
+              onClick={handleClick}
+            > 
+              New record
+            </button>
+            <div className='flex flex-col bg_operationList rounded-xl border-solid border p-2 mb-8'>
+              <div className='pl-2 pr-2 flex flex-col items-center'>
                {
                  currentPost.length > 0 ? 
                   currentPost.map((prop) => {

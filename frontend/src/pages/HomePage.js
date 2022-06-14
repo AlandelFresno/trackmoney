@@ -82,22 +82,22 @@ const HomePage = () => {
   };
 
   return (
-    <div className=' w-screen h-screen text-white'>
-      <div className='flex flex-col items-center'>
+    <div className=' w-screen text-white'>
+      <div className='h-screen flex flex-col items-center bg_homePage'>
         <div className=''>
           <h4 className=' text-5xl w-96 flex 
                           justify-center items-center 
-                          border border-white border-solid rounded-xl
-                          bg-gray-500 m-0 p-0 mt-8 mb-8'
+                          border border_total border-solid rounded-xl
+                           m-0 p-0 mt-8 mb-8'
           > $ {total} </h4>
         </div>
           <button 
-            className='page_button w-64 h-10 text-xl border-none rounded-lg mb-16 bg-gray-500 text-white cursor-pointer'
+            className='page_button w-64 h-10 text-xl rounded-lg mb-16 button_home text-white cursor-pointer'
             onClick={handleClick}
           > 
             New record
           </button>
-          <div className='border-none border-solid rounded-lg p-8 bg-gray-900 '>
+          <div className='border-none border-solid rounded-lg p-8 bg-tenOperations '>
             {
               // render 10 operations or a <p></p>
               records.length > 0 ? 
