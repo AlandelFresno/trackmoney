@@ -109,7 +109,7 @@ const OperationsPage = () => {
 
     return (
       <div className='text-white'>
-        <div className='flex  flex-col items-center bg_operationPage'>
+        <div className={`flex  flex-col  items-center bg_operationPage`}>
             <h4 className='mt-16 operation_h4'>OPERATIONS</h4>
             <button 
               className='page_button w-56 h-10 text-xl border-none rounded-lg mb-16 cursor-pointer button_operationPage'
