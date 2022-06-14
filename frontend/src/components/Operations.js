@@ -19,7 +19,7 @@ const Operations = (params) => {
             cancelButtonColor: 'red',
             html: 
                 `<label> Title </label>` +
-                `<input id='swal-input1' placeholder=${title} class='swal2-input customSwalBtn'/>` +
+                `<input id='swal-input1' placeholder=${title !== '' ? title : 'NoTitle'} class='swal2-input customSwalBtn'/>` +
                 `<label> Amount </label>` +
                 `<input id='swal-input2' placeholder=${amount} class='swal2-input customSwalBtn'/>`
         }).then((result) => {
@@ -66,7 +66,7 @@ const Operations = (params) => {
             confirmButtonColor: 'green',
             cancelButtonText: 'No, cancel',
             cancelButtonColor: 'red',
-            background: '#1f1f1f'
+            background: '#1f1f1f',
         }).then ((ressult) => {
                 if(ressult.isConfirmed) {
                     axios.delete('http://localhost:3001/api/operation', {
