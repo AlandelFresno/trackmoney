@@ -31,7 +31,7 @@ const HomePage = () => {
       title: 'New the operation',
       showCancelButton: true,
       color: 'white',
-      background: '#1f1f1f',
+      background: '#0D4367',
       confirmButtonColor: 'green',
       cancelButtonColor: 'red',
       html: 
@@ -74,7 +74,7 @@ const HomePage = () => {
               color: 'white',
               confirmButtonColor: 'green',
               iconColor: 'green',
-              background: '#1f1f1f',
+              background: '#0D4367',
               timer: 3000,
           }).then(() => {document.location.reload()});
       };
@@ -88,7 +88,7 @@ const HomePage = () => {
           <h4 className=' text-5xl w-96 flex 
                           justify-center items-center 
                           border border_total border-solid rounded-xl
-                           m-0 p-0 mt-8 mb-8'
+                           m-0 p-0 mt-6 mb-6'
           > $ {total} </h4>
         </div>
           <button 

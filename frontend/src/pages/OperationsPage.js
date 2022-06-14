@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import Operations from '../components/Operations';
 import obtainName from '../helpers/obtainName';
 import OpObtain from '../helpers/OpObtain';
+import './pages.css';
 
 const OperationsPage = () => {
 
@@ -56,7 +57,7 @@ const OperationsPage = () => {
       title: 'New the operation',
       showCancelButton: true,
       color: 'white',
-      background: '#1f1f1f',
+      background: '#0D4367',
       confirmButtonColor: 'green',
       cancelButtonColor: 'red',
       html: 
@@ -70,15 +71,13 @@ const OperationsPage = () => {
           Income: 'Income'
       },
       customClass: {
-          input: 'input_swal',
+          input: 'input_swal'
       }
   }).then(async(result) => {
-      console.log(result);
+      // console.log(result);
       if(result.isConfirmed){
         const resultTitle = document.getElementById('swal-input1').value;
         const resultAmount = document.getElementById('swal-input2').value;
-        // console.log(resultTitle, resultAmount)
-
             const axiosResults = await axios.get('http://localhost:3001/api/users', {
               params: {
                 name: userName
@@ -99,7 +98,7 @@ const OperationsPage = () => {
               color: 'white',
               confirmButtonColor: 'green',
               iconColor: 'green',
-              background: '#1f1f1f',
+              background: '#0D4367',
               timer: 3000,
           }).then(() => {document.location.reload()});
       };

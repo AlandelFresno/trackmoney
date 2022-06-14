@@ -14,7 +14,7 @@ const Operations = (params) => {
             title: 'Edit the operation',
             showCancelButton: true,
             color: 'white',
-            background: '#1f1f1f',
+            background: '#0D4367',
             confirmButtonColor: 'green',
             cancelButtonColor: 'red',
             html: 
@@ -48,7 +48,7 @@ const Operations = (params) => {
                     color: 'white',
                     confirmButtonColor: 'green',
                     iconColor: 'green',
-                    background: '#1f1f1f',
+                    background: '#0D4367',
                     timer: 3000,
                 }).then(() => {document.location.reload()});
             };
@@ -66,7 +66,7 @@ const Operations = (params) => {
             confirmButtonColor: 'green',
             cancelButtonText: 'No, cancel',
             cancelButtonColor: 'red',
-            background: '#1f1f1f',
+            background: '#0D4367',
         }).then ((ressult) => {
                 if(ressult.isConfirmed) {
                     axios.delete('http://localhost:3001/api/operation', {
@@ -80,7 +80,7 @@ const Operations = (params) => {
                         color: 'white',
                         confirmButtonColor: 'green',
                         iconColor: 'green',
-                        background: '#1f1f1f',
+                        background: '#0D4367',
                         timer: 2000,
                     }).then(() => {document.location.reload()});
                 };

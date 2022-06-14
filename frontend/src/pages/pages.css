@@ -119,14 +119,19 @@
     background-color: #0D4367;
 }
 /* Swal */
-
-
 .input_swal {
-    background-color: #1f1f1f;
+    cursor: pointer;
+    background-color: #0D4367;
     border-radius: 0.5rem;
+    border-color: #BBE1FA;
+}
+.input_swal:focus {
+    border-color: #BBE1FA;
+    background-color: #0D4367;
 }
 .customSwalBtn {
     border-radius: 0.75rem;
+    border-color: #BBE1FA;
 }
 #swal-input1 {
     margin-left: 70px;
