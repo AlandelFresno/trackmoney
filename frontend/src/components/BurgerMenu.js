@@ -48,7 +48,7 @@ const BurgerMenu = () => {
               > X </button>
             )
         }
-        <div className={`top-0 right-0 fixed ${isOpen ? 'translate-x-0 bg_burgerMenu h-screen pl-4' : 'translate-x-full h-screen'} ease-in-out duration-300`}>    
+        <div className={`top-0 right-0 fixed ${isOpen ? 'translate-x-0 bg_burgerMenu h-screen pl-4 ' : 'translate-x-full h-screen hidden'} ease-in-out duration-300`}>    
           <div className='mt-20 mr-8 flex flex-col'>
             <Link to='/home' className='no-underline text-white pb-2 link_burger '> Home </Link>
             <Link to='/operations' className='no-underline text-white pb-2 link_burger'> Records </Link>

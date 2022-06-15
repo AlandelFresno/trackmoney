@@ -46,7 +46,8 @@ const HomePage = () => {
       },
       customClass: {
           input: 'input_swal',
-      }
+      },
+      // width: auto
   }).then(async(result) => {
       console.log(result);
       if(result.isConfirmed){

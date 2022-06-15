@@ -206,4 +206,14 @@
         font-size: 1.1rem;
         line-height: 1.55rem;
     }
+
+    /* Swal */
+    #swal-input1 {
+        width: 10rem;
+    }
+    #swal-input2 {
+        width: 10rem;
+    }
+
+
 }
