@@ -9,8 +9,8 @@ const Operations = (params) => {
 
     const {amount, title, operationType, id} = params;
 
-    const handleClickEdit = () => {
-        Swal.fire({
+    const handleClickEdit = () => {     // Operation Edit
+        Swal.fire({             
             title: 'Edit the operation',
             showCancelButton: true,
             color: 'white',
@@ -27,7 +27,7 @@ const Operations = (params) => {
                 let resultAmount;
                 let resultTitle;
                 
-                if ( document.getElementById('swal-input1').value === ''){
+                if ( document.getElementById('swal-input1').value === ''){   // handle inputs
                     resultTitle = title;
                 } else {
                     resultTitle = document.getElementById('swal-input1').value;
@@ -37,12 +37,12 @@ const Operations = (params) => {
                 } else {
                     resultAmount = document.getElementById('swal-input2').value;
                 };
-                axios.put(`http://localhost:3001/api/operation`, {
+                axios.put(`http://localhost:3001/api/operation`, {   // PUT request
                     id,
                     title: resultTitle,
                     amount: resultAmount,
                 }).then().catch(err => console.log(err));
-                Swal.fire({
+                Swal.fire({   // Fire confirmation
                     title: 'Operation updated',
                     icon: 'success',
                     color: 'white',
@@ -50,13 +50,13 @@ const Operations = (params) => {
                     iconColor: 'green',
                     background: '#0D4367',
                     timer: 3000,
-                }).then(() => {document.location.reload()});
+                }).then(() => {document.location.reload()});  // Refresh
             };
         }).catch(err => console.log(err));
     };
     
-    const handleClickDelete = () => {
-        Swal.fire({
+    const handleClickDelete = () => {   // Operation Delete
+        Swal.fire({         // Fire question
             title: 'Want to delete it?',
             color: 'white',
             icon: 'warning',
@@ -69,12 +69,12 @@ const Operations = (params) => {
             background: '#0D4367',
         }).then ((ressult) => {
                 if(ressult.isConfirmed) {
-                    axios.delete('http://localhost:3001/api/operation', {
+                    axios.delete('http://localhost:3001/api/operation', {  //DELETE request
                         params: {
                             id
                         }
                     });
-                    Swal.fire({
+                    Swal.fire({   // Fire confirmation
                         title: 'Operation deleted',
                         icon: 'success',
                         color: 'white',
@@ -82,7 +82,7 @@ const Operations = (params) => {
                         iconColor: 'green',
                         background: '#0D4367',
                         timer: 2000,
-                    }).then(() => {document.location.reload()});
+                    }).then(() => {document.location.reload()});   //Refresh
                 };
             })
           .catch(err => console.log(err));
@@ -92,12 +92,12 @@ const Operations = (params) => {
     <div className='flex justify-between operation_width items-center border boder-solid rounded-md border-white'>
         <h5 className='title_width text-sm'>{title}</h5>
         {
-            operationType === 'Income' ? 
+            operationType === 'Income' ?    // Change color by operation type
                 <p className='text-green-700 text-base'> ${amount} </p>  
             :
                 <p className='text-red-600 base'> ${amount} </p>
         }
-        <div className='title_width flex justify-end'>
+        <div className='title_width flex justify-end'>   {/* Edit & Delete icon */}
             <EditIcon onClick={handleClickEdit} className='cursor-pointer' fontSize='small'/>
             <DeleteIcon onClick={handleClickDelete} className='cursor-pointer' fontSize='small'/>
         </div>

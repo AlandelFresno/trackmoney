@@ -17,7 +17,6 @@
     outline: 4px solid #BBE1FA;
 }
 
-
 /* LoginPage */
 
 .bg_loginpage {
@@ -32,7 +31,6 @@
     border-color: #2978AC;
 }
 
-
 /* RegisterPage */
 
 .bg_register {
@@ -41,7 +39,6 @@
 .form_registerpage {
     background-color: #0D4367;
     padding: 8rem;
-    /* p-32  w-96 */
 }
 
 /* WelcomePage */
@@ -53,8 +50,8 @@
     background-color: #16669b;
     border-color: #0D4367;
     border-style: solid;
-    cursor: pointer;
     color: whitesmoke;
+    cursor: pointer;
 }
 .button_welcome:hover {
     background-color: #BBE1FA;   
@@ -89,14 +86,14 @@
     border-color: #0D4367;
 }
 .button_operationPage  {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    height: 2.5rem;
-    width: 14rem;
     background-color: #0D4367;
     border-color: #0D4367;
     border-style: solid;
     color: whitesmoke;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    line-height: 1.75rem;
+    width: 14rem;
 }
 .button_operationPage:hover {
     background-color: #BBE1FA;
@@ -114,23 +111,23 @@
     height: 100vh;
 }
 .total_home{
+    background-color: #0D4367;
+    border-color: #0D4367;
     font-size: 3rem;
     line-height: 1;
-    border-color: #0D4367;
-    background-color: #0D4367;
     height: 3.75rem;
     width: 20rem;
 }
 
 .button_home  {
-    width: 16rem;
-    height: 2.5rem;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
     background-color: #0D4367;
     border-color: #0D4367;
     border-style: solid;
     color: whitesmoke;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    line-height: 1.75rem;
+    width: 16rem;
 }
 .button_home:hover {
     background-color: #BBE1FA;
@@ -147,18 +144,18 @@
 /* Swal */
 
 .input_swal {
-    cursor: pointer;
     background-color: #0D4367;
-    border-radius: 0.5rem;
     border-color: #BBE1FA;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 .input_swal:focus {
-    border-color: #BBE1FA;
     background-color: #0D4367;
+    border-color: #BBE1FA;
 }
 .customSwalBtn {
-    border-radius: 0.75rem;
     border-color: #BBE1FA;
+    border-radius: 0.75rem;
 }
 #swal-input1 {
     margin-left: 70px;
@@ -190,10 +187,10 @@
         width: 12rem;
     }
     .button_home {
-        width: 9rem;
         height: 2rem;
         font-size: 1rem;
         line-height: 1.5rem;
+        width: 9rem;
     }
     .button_home:hover {
         background-color: #BBE1FA;
@@ -218,8 +215,8 @@
     }
     .button_operationPage {
         font-size: 1rem;
-        line-height: 1.5rem;
         height: 2rem;
+        line-height: 1.5rem;
         width: 8rem;
     }
     .button_operationPage:hover {

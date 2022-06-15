@@ -15,7 +15,7 @@ const LoginPage = () => {
     validationErr: '',
   });
 
-  const isValidate = async(userInput, passwordInput) => {
+  const isValidate = async(userInput, passwordInput) => {   // Form Validation
     const {data} = await axios.get('http://localhost:3001/api/users', {params: {name: userInput}});
     let userNameErr = '';
     let passwordErr = '';
@@ -58,7 +58,6 @@ const LoginPage = () => {
     const validation = await isValidate(userNameInput, passwordInput);
     if (validation) {
       setValid({...valid, userNameErr: '', passwordErr: '', validationErr: ''});
-      // console.log('login', userNameInput);
       dispatch(NameLogIn(userNameInput));
       dispatch(LogIn());
     };

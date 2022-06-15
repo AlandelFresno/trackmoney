@@ -1,9 +1,6 @@
 import axios from "axios";
 
-
-
 const OpObtain = async(name) => {
-    // console.log(name);
     const getId = async() => { // Get user data and return only the ID
       const {data} = await axios.get('http://localhost:3001/api/users', {params: {name}}); // get user data
       return data[0].id; // returns only the user id

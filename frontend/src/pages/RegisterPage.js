@@ -20,7 +20,7 @@ const RegisterPage = () => {
   const [value, setValue] = useState(initialState);
   const navigate = useNavigate();
 
-  const isValidated = async(name) => {
+  const isValidated = async(name) => {  // Form validation
 
     let nameErr = '';
     let emailErr = '';
@@ -51,7 +51,6 @@ const RegisterPage = () => {
     if (usarnametaken) {
       nameErr = 'Username already exists'
     };
-    // console.log( nameErr || emailErr || passwordErr || confirmpasswordErr )
 
     if ( nameErr || emailErr || passwordErr || confirmpasswordErr) {
       setValue ({...value, nameErr, emailErr, passwordErr, confirmpasswordErr});
@@ -67,13 +66,11 @@ const RegisterPage = () => {
       setValue({...value, [e.target.name]: e.target.value});
   };
 
-  const isTaken = async(name) => {
+  const isTaken = async(name) => {  // Check if the username exists
     const users = await axios.get('http://localhost:3001/api/users', {params: {name: name}}); 
     if ( users.data.length !== 0 ) {
-      // console.log('is taken');
       return true;
     } else {
-      // console.log('is free');
       return false;
     };
   };
@@ -89,7 +86,7 @@ const RegisterPage = () => {
         email: value.email,
         password: value.password
       });
-      navigate('/login');
+      navigate('/login');  // Redirects to loginpage 
     };
   };
 

@@ -1,7 +1,6 @@
 
-const obtainName = (reduxName) => {
-    const name = localStorage.getItem('name');
-    // console.log(reduxName);
+const obtainName = (reduxName) => {   // Handle local storage user name
+    const name = localStorage.getItem('name');  
     if (name !== '') {
         return name;
     }; 

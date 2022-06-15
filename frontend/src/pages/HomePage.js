@@ -22,7 +22,6 @@ const HomePage = () => {
       const {record, tot} = resultOpOb; 
       setTotal(tot);
       setRecords(record);
-      // console.log(record);
     };
     fetchData();
   }, [userName]);
@@ -47,15 +46,11 @@ const HomePage = () => {
       },
       customClass: {
           input: 'input_swal',
-      },
-      // width: auto
+      }
   }).then(async(result) => {
-      // console.log(result);
       if(result.isConfirmed){
         const resultTitle = document.getElementById('swal-input1').value;
         const resultAmount = document.getElementById('swal-input2').value;
-        // console.log(resultTitle, resultAmount)
-
             const axiosResults = await axios.get('http://localhost:3001/api/users', {
               params: {
                 name: userName

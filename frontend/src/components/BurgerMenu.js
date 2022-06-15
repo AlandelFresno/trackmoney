@@ -1,18 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { LogOut } from '../redux/actions/auth';
 import { NameLogOut } from '../redux/actions/name';
-
-
-
 
 const BurgerMenu = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
-
     const handleClick = () => {
         dispatch(NameLogOut());
         dispatch(LogOut());
@@ -28,7 +24,7 @@ const BurgerMenu = () => {
                 className='fixed z-30 flex items-center cursor-pointer burger bg-transparent border-0 '
                 onClick={() => setIsOpen(!isOpen)}
               >
-                <svg
+                <svg            // Burger Icon
                   className='bg_svg'
                   viewBox="0 0 80 80"
                   width="40"
@@ -48,8 +44,8 @@ const BurgerMenu = () => {
               > X </button>
             )
         }
-        <div className={`top-0 right-0 fixed ${isOpen ? 'translate-x-0 bg_burgerMenu h-screen pl-4 ' : 'translate-x-full h-screen hidden'} ease-in-out duration-300`}>    
-          <div className='mt-20 mr-8 flex flex-col'>
+        <div className={`top-0 right-0 fixed ${isOpen ? 'translate-x-0 bg_burgerMenu h-screen pl-4 ' : 'translate-x-full h-screen hidden'} ease-in-out duration-300`}> {/* Nav condition */}   
+          <div className='mt-20 mr-8 flex flex-col'>   {/* Links & buttons */}
             <Link to='/home' className='no-underline text-white pb-2 link_burger '> Home </Link>
             <Link to='/operations' className='no-underline text-white pb-2 link_burger'> Records </Link>
           </div>
@@ -57,6 +53,6 @@ const BurgerMenu = () => {
         </div>
       </div>
   )
-}
+};
 
-export default BurgerMenu
+export default BurgerMenu;

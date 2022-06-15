@@ -53,7 +53,7 @@ const OperationsPage = () => {
   
   // Operation create
   const handleClick = () => {
-    Swal.fire({
+    Swal.fire({ 
       title: 'New the operation',
       showCancelButton: true,
       color: 'white',
@@ -74,7 +74,6 @@ const OperationsPage = () => {
           input: 'input_swal'
       }
     }).then(async(result) => {
-        // console.log(result);
         if(result.isConfirmed){
           const resultTitle = document.getElementById('swal-input1').value;
           const resultAmount = document.getElementById('swal-input2').value;
@@ -117,7 +116,7 @@ const OperationsPage = () => {
             </button>
             <div className='flex flex-col bg_operationList rounded-xl border-solid border p-2 mb-8'>
               <div className='pl-2 pr-2 flex flex-col items-center'>
-               {
+               {    //render operations depends of postPerPage
                  currentPost.length > 0 ? 
                   currentPost.map((prop) => {
                     return <Operations key={prop.id} id={prop.id} amount={prop.amount} title={prop.title} operationType={prop.operationType}/>
@@ -126,14 +125,14 @@ const OperationsPage = () => {
                   <p> You don't have any records </p>
                }
                 <nav className='flex justify-center items-center'>
-                {
+                {    //moves you to the first page of pagination
                     currentPost >= 1 ? 
                     <a className='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(1)}} href='/operations/!#'> First page</a>
                     :
                     <p></p>
                   }
                   <ul className='flex no-underline list-none p-0'>
-                    {
+                    {       //  handle pagination numbers ( they desapear if not handle)
                       currentPage < 2 ? 
                       pageNumbers.slice(currentPage-1, currentPage+5).map(number => (
                         <li key={number} className=''>
@@ -177,7 +176,7 @@ const OperationsPage = () => {
                       )) 
                     }
                   </ul>
-                  {
+                  {       // moves you to the last page of pagination
                     currentPost >= 1 ? 
                     <a clssName='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(pageNumbers.length )}} href='/operations/!#'> Last Page</a>
                     :

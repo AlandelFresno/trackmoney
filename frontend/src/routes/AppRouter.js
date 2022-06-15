@@ -15,8 +15,8 @@ const AppRouter = () => {
   const tokenStore = (localStorage.getItem('auth') === 'true');
   const nameStore = localStorage.getItem('name');
 
-
-  if (tokenStore) {
+  // Handle local storage auth and username
+  if (tokenStore) { 
     dispatch(LogIn());
   };
   if( nameStore !== '') {
@@ -35,7 +35,6 @@ const AppRouter = () => {
             <PublicRoute />
           )
         }
-        
     </Router>
   );
 };
