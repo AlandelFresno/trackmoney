@@ -98,7 +98,7 @@ const RegisterPage = () => {
     <div className='w-screen'>
       <div className='flex h-screen justify-center items-center bg_register'>
         <form 
-            className=' flex flex-col items-center p-32 w-96  
+            className=' flex flex-col items-center    
                         rounded-xl form_registerpage'
             onSubmit={handleSubmit}
         >

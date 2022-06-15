@@ -26,11 +26,11 @@
 
 .form_loginpage {
     background-color: #0D4367;
+    padding: 8rem;
 }    
 .login_border_color {
     border-color: #2978AC;
 }
-
 
 
 /* RegisterPage */
@@ -40,9 +40,9 @@
 }
 .form_registerpage {
     background-color: #0D4367;
+    padding: 8rem;
+    /* p-32  w-96 */
 }
-
-
 
 /* WelcomePage */
 
@@ -74,6 +74,7 @@
 /* OperationPage */
 .bg_operationPage {
     background: linear-gradient(45deg, #06273D 30%, #02162C 100%);
+    height: 100vh;
 }
 .operation_h4 {
     font-size: 30px;
@@ -105,6 +106,7 @@
 /* HomePage */
 .bg_homePage {
     background: linear-gradient(230deg, #06273D 30%, #02162C 100%);
+    height: 100vh;
 }
 .total_home{
     font-size: 3rem;
@@ -169,6 +171,14 @@
 
 @media (max-width: 390px) {
     /* HomePage */
+
+
+    .heigh_homeL {
+        height: 100%;
+    }
+    .height_homeH {
+        height: 120vh;
+    }
     .total_home {
         font-size: 1.875rem;
         line-height: 2.25rem;
@@ -192,7 +202,12 @@
     }
 
     /* OperationPage */
-
+    .height_operationL {
+        height: 100vh;
+    }
+    .height_operationH {
+        height: 180vh;
+    }
     .operation_h4{
         font-size: 1.5rem;
     }
@@ -213,6 +228,16 @@
     }
     #swal-input2 {
         width: 10rem;
+    }
+
+    /* LoginPage */
+    .form_loginpage{
+        padding: 4rem ;
+    }
+    
+    /* RegisterPage */
+    .form_registerpage{
+        padding: 3rem ;
     }
 
 

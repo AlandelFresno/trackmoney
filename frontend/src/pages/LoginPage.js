@@ -43,10 +43,10 @@ const LoginPage = () => {
 
     if ( userNameErr || passwordErr || validationErr) {
       setValid({userNameErr, passwordErr, validationErr});
-      console.log('errors');
+      // console.log('errors');
       return false;
     };
-    console.log('No errors');
+    // console.log('No errors');
     return true;
   };
   
@@ -58,7 +58,7 @@ const LoginPage = () => {
     const validation = await isValidate(userNameInput, passwordInput);
     if (validation) {
       setValid({...valid, userNameErr: '', passwordErr: '', validationErr: ''});
-      console.log('login', userNameInput);
+      // console.log('login', userNameInput);
       dispatch(NameLogIn(userNameInput));
       dispatch(LogIn());
     };
@@ -68,7 +68,7 @@ const LoginPage = () => {
     <div className='w-screen'>
       <div className='flex h-screen justify-center items-center bg_loginpage'>
         <form 
-          className=' flex flex-col items-center p-32  rounded-xl form_loginpage'
+          className=' flex flex-col items-center rounded-xl form_loginpage'
           onSubmit={handleSubmit}
         >
         <div className='flex flex-col pb-4'>

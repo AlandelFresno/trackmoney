@@ -22,6 +22,7 @@ const HomePage = () => {
       const {record, tot} = resultOpOb; 
       setTotal(tot);
       setRecords(record);
+      // console.log(record);
     };
     fetchData();
   }, [userName]);
@@ -49,7 +50,7 @@ const HomePage = () => {
       },
       // width: auto
   }).then(async(result) => {
-      console.log(result);
+      // console.log(result);
       if(result.isConfirmed){
         const resultTitle = document.getElementById('swal-input1').value;
         const resultAmount = document.getElementById('swal-input2').value;
@@ -83,8 +84,8 @@ const HomePage = () => {
   };
 
   return (
-    <div className='h-screen text-white'>
-      <div className=' flex flex-col items-center bg_homePage'>
+    <div className='text-white'>
+      <div className={`flex flex-col items-center bg_homePage ${records.length < 8 ? 'height_homeL' : 'height_homeH'}`}>
         <div className=''>
           <h4 className=' total_home flex 
                           justify-center items-center 

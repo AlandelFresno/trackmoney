@@ -30,7 +30,7 @@ const OperationsPage = () => {
   }, [userName]);
   
   //pagination
-  const postPerPage = 13;
+  const postPerPage = 15;
   // Get current posts
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -73,42 +73,41 @@ const OperationsPage = () => {
       customClass: {
           input: 'input_swal'
       }
-  }).then(async(result) => {
-      // console.log(result);
-      if(result.isConfirmed){
-        const resultTitle = document.getElementById('swal-input1').value;
-        const resultAmount = document.getElementById('swal-input2').value;
-            const axiosResults = await axios.get('http://localhost:3001/api/users', {
-              params: {
-                name: userName
-              }
-            })
-            const userData = axiosResults.data[0];
-          axios.post(`http://localhost:3001/api/operation`, {
-              params: {
-                title: resultTitle,
-                amount: resultAmount,
-                operationType: result.value,
-                userID: userData.id
-              }
-          }).then().catch(err => console.log(err));
-          Swal.fire({
-              title: 'Operation created',
-              icon: 'success',
-              color: 'white',
-              confirmButtonColor: 'green',
-              iconColor: 'green',
-              background: '#0D4367',
-              timer: 3000,
-          }).then(() => {document.location.reload()});
-      };
-  }).catch(err => console.log(err));
-  };
-
+    }).then(async(result) => {
+        // console.log(result);
+        if(result.isConfirmed){
+          const resultTitle = document.getElementById('swal-input1').value;
+          const resultAmount = document.getElementById('swal-input2').value;
+              const axiosResults = await axios.get('http://localhost:3001/api/users', {
+                params: {
+                  name: userName
+                }
+              })
+              const userData = axiosResults.data[0];
+            axios.post(`http://localhost:3001/api/operation`, {
+                params: {
+                  title: resultTitle,
+                  amount: resultAmount,
+                  operationType: result.value,
+                  userID: userData.id
+                }
+            }).then().catch(err => console.log(err));
+            Swal.fire({
+                title: 'Operation created',
+                icon: 'success',
+                color: 'white',
+                confirmButtonColor: 'green',
+                iconColor: 'green',
+                background: '#0D4367',
+                timer: 3000,
+            }).then(() => {document.location.reload()});
+          };
+        }).catch(err => console.log(err));
+    };
 
     return (
       <div className='text-white'>
-        <div className={`flex  flex-col  items-center bg_operationPage`}>
+        <div className={`flex flex-col  items-center bg_operationPage ${currentPost.length < 8 ? 'height_operationL' : 'height_operationH'}`}>
             <h4 className='mt-16 operation_h4'>OPERATIONS</h4>
             <button 
               className='border-none rounded-lg mb-16 cursor-pointer button_operationPage'
