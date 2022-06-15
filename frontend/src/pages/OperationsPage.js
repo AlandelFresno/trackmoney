@@ -126,7 +126,12 @@ const OperationsPage = () => {
                   <p> You don't have any records </p>
                }
                 <nav className='flex justify-center items-center'>
-                <a className='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(1)}} href='/operations/!#'> First page</a>
+                {
+                    currentPost >= 1 ? 
+                    <a className='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(1)}} href='/operations/!#'> First page</a>
+                    :
+                    <p></p>
+                  }
                   <ul className='flex no-underline list-none p-0'>
                     {
                       currentPage < 2 ? 
@@ -172,7 +177,12 @@ const OperationsPage = () => {
                       )) 
                     }
                   </ul>
-                  <a className='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(pageNumbers.length )}} href='/operations/!#'> Last Page</a>
+                  {
+                    currentPost >= 1 ? 
+                    <a clssName='no-underline text-white pl-2 m-0 p-0' onClick={(e) => {e.preventDefault(); paginate(pageNumbers.length )}} href='/operations/!#'> Last Page</a>
+                    :
+                    <p></p>
+                  }
                 </nav>
               </div>
             </div>
