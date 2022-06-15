@@ -19,7 +19,7 @@ const Operations = (params) => {
             cancelButtonColor: 'red',
             html: 
                 `<label> Title </label>` +
-                `<input id='swal-input1' placeholder=${title !== '' ? title : 'NoTitle'} class='swal2-input customSwalBtn'/>` +
+                `<input id='swal-input1' maxlength='20' placeholder=${title !== '' ? title : 'NoTitle'} class='swal2-input customSwalBtn'/>` +
                 `<label> Amount </label>` +
                 `<input id='swal-input2' placeholder=${amount} class='swal2-input customSwalBtn'/>`
         }).then((result) => {

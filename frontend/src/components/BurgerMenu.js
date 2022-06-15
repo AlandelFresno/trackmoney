@@ -25,25 +25,25 @@ const BurgerMenu = () => {
           !isOpen ? 
             (
               <button 
-                className='fixed z-30 flex items-center cursor-pointer right-8 top-6 bg-transparent border-0 '
+                className='fixed z-30 flex items-center cursor-pointer burger bg-transparent border-0 '
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
-                  className=''
-                  viewBox="0 0 100 60"
+                  className='bg_svg'
+                  viewBox="0 0 80 80"
                   width="40"
                   height="35"
                 >
-                  <rect y="0" width="70" height="5" fill='white'></rect>
-                  <rect y="20" width="70" height="5" fill='white'></rect>
-                  <rect y="40" width="70" height="5" fill='white'></rect>
+                  <rect y="15" x="5" width="70" height="5" fill='white'></rect>
+                  <rect y="35" x="5" width="70" height="5" fill='white'></rect>
+                  <rect y="55" x="5" width="70" height="5" fill='white'></rect>
                 </svg>
               </button>
             ) 
           : 
             (
               <button 
-                className='text-xl z-30 fixed top-6 right-14 cursor-pointer bg-transparent border-0 text-white'
+                className='text-xl z-30 fixed close_nav cursor-pointer bg-transparent border-0 text-white'
                 onClick={() => setIsOpen(!isOpen)}
               > X </button>
             )

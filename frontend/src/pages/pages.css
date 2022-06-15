@@ -16,6 +16,8 @@
 .input_publicpage:focus-visible {
     outline: 4px solid #BBE1FA;
 }
+
+
 /* LoginPage */
 
 .bg_loginpage {
@@ -29,6 +31,8 @@
     border-color: #2978AC;
 }
 
+
+
 /* RegisterPage */
 
 .bg_register {
@@ -37,6 +41,9 @@
 .form_registerpage {
     background-color: #0D4367;
 }
+
+
+
 /* WelcomePage */
 
 .bg_welcome{
@@ -68,9 +75,6 @@
 .bg_operationPage {
     background: linear-gradient(45deg, #06273D 30%, #02162C 100%);
 }
-.operation_width {
-    width: 45rem;
-}
 .operation_h4 {
     font-size: 30px;
 }
@@ -79,6 +83,10 @@
     border-color: #0D4367;
 }
 .button_operationPage  {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    height: 2.5rem;
+    width: 14rem;
     background-color: #0D4367;
     border-color: #0D4367;
     border-style: solid;
@@ -92,17 +100,26 @@
     line-height: 1.55rem;
 }
 
+
+
 /* HomePage */
 .bg_homePage {
     background: linear-gradient(230deg, #06273D 30%, #02162C 100%);
 }
-.border_total {
+.total_home{
+    font-size: 3rem;
+    line-height: 1;
     border-color: #0D4367;
     background-color: #0D4367;
     height: 3.75rem;
+    width: 20rem;
 }
 
 .button_home  {
+    width: 16rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     background-color: #0D4367;
     border-color: #0D4367;
     border-style: solid;
@@ -115,10 +132,13 @@
     font-size: 1.35rem;
     line-height: 1.55rem;
 }
-.bg-tenOperations {
+.tenOperations {
     background-color: #0D4367;
 }
+
+
 /* Swal */
+
 .input_swal {
     cursor: pointer;
     background-color: #0D4367;
@@ -143,4 +163,47 @@
 }
 #swal-input2[type=number] {
     -moz-appearance: none;
+}
+
+/* Responsive */
+
+@media (max-width: 390px) {
+    /* HomePage */
+    .total_home {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        width: 12rem;
+    }
+    .button_home {
+        width: 9rem;
+        height: 2rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .button_home:hover {
+        background-color: #BBE1FA;
+        border-color: #BBE1FA;
+        color: black;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+    .tenOperations {
+        margin-bottom: 1rem;
+    }
+
+    /* OperationPage */
+
+    .operation_h4{
+        font-size: 1.5rem;
+    }
+    .button_operationPage {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        height: 2rem;
+        width: 8rem;
+    }
+    .button_operationPage:hover {
+        font-size: 1.1rem;
+        line-height: 1.55rem;
+    }
 }

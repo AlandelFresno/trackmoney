@@ -4,12 +4,24 @@
     max-width: 150px;
     width: 150px;
 }
+
 .customSwalBtn {
     border-radius: 0.75rem;
 }
-
+.operation_width {
+    width: 45rem;
+}
 
 /* BurgerMenu */
+.burger {
+    top: 1.5rem;
+    right: 2rem;
+}
+.close_nav{
+    right: 3.5rem;
+    top: 1.5rem;
+    /* top-6 right-14 */
+}
 .bg_burgerMenu {
     font-size: 1.4rem;
     background-color: #0D4367;
@@ -36,4 +48,35 @@
 }
 .link_burger:hover {
     color: #BBE1FA;
+}
+
+
+/* Responsive  */
+@media (max-width: 390px) {
+    /* Operation */
+    .title_width {
+        max-width: 70px;
+        width: 70px;
+    }
+    .operation_width {
+        width: 20rem;
+    }
+    /* BurgerMenu */
+    .burger {
+        position: fixed;
+        right: 1rem;
+        /* right: 1rem; */
+        top: 2rem;
+    }
+    .bg_svg{
+        background-color: #02162C;
+        border-radius: 0.5rem;
+    }
+    .close_nav{
+        right: 2rem;
+        top: 2rem;
+        /* top-6 right-14 */
+    }
+
+    
 }

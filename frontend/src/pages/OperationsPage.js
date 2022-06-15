@@ -62,7 +62,7 @@ const OperationsPage = () => {
       cancelButtonColor: 'red',
       html: 
           `<label> Title </label>` +
-          `<input id='swal-input1' placeholder='Title' class='swal2-input customSwalBtn'/>` +
+          `<input id='swal-input1' maxlength='20' placeholder='Title' class='swal2-input customSwalBtn'/>` +
           `<label> Amount </label>` +
           `<input id='swal-input2' type='number' placeholder='Amount' class='swal2-input customSwalBtn'/>`,
       input: 'select',
@@ -111,7 +111,7 @@ const OperationsPage = () => {
         <div className={`flex  flex-col  items-center bg_operationPage`}>
             <h4 className='mt-16 operation_h4'>OPERATIONS</h4>
             <button 
-              className='page_button w-56 h-10 text-xl border-none rounded-lg mb-16 cursor-pointer button_operationPage'
+              className='border-none rounded-lg mb-16 cursor-pointer button_operationPage'
               onClick={handleClick}
             > 
               New record

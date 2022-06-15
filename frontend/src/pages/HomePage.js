@@ -36,7 +36,7 @@ const HomePage = () => {
       cancelButtonColor: 'red',
       html: 
           `<label> Title </label>` +
-          `<input id='swal-input1' placeholder='Title' class='swal2-input customSwalBtn'/>` +
+          `<input id='swal-input1' maxlength='20' placeholder='Title' class='swal2-input customSwalBtn'/>` +
           `<label> Amount </label>` +
           `<input id='swal-input2' type='number' placeholder='Amount' class='swal2-input customSwalBtn'/>`,
       input: 'select',
@@ -82,22 +82,22 @@ const HomePage = () => {
   };
 
   return (
-    <div className=' w-screen text-white'>
-      <div className='h-screen flex flex-col items-center bg_homePage'>
+    <div className='h-screen text-white'>
+      <div className=' flex flex-col items-center bg_homePage'>
         <div className=''>
-          <h4 className=' text-5xl w-96 flex 
+          <h4 className=' total_home flex 
                           justify-center items-center 
-                          border border_total border-solid rounded-xl
+                          border border-solid rounded-xl
                            m-0 p-0 mt-6 mb-6'
           > $ {total} </h4>
         </div>
           <button 
-            className='page_button w-64 h-10 text-xl rounded-lg mb-16 button_home text-white cursor-pointer'
+            className='page_button rounded-lg mb-16 button_home text-white cursor-pointer'
             onClick={handleClick}
           > 
             New record
           </button>
-          <div className='border-none border-solid rounded-lg p-8 bg-tenOperations '>
+          <div className='border-none border-solid rounded-lg p-6 tenOperations '>
             {
               // render 10 operations or a <p></p>
               records.length > 0 ? 
